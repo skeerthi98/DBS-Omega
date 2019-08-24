@@ -1,0 +1,51 @@
+Reading to be completed with analysis
+
+ 
+
+1. Read about Javascript operators, Typescript operators. Compare the two and come out with the operators missing in javascript.
+
+Javascript operators:
+
+Arithmetic Operators (+,-,*,/,%,++,--)
+Comparison Operators (==,===,!=,!==,>,<,>=,<=)
+Logical Operators (&&,||,!)
+Bitwise Operators (&,|,^,~,<<,>>,>>>)
+Assignment Operators (=,+=,-=,*=,/=,%=)
+Conditional (or ternary) Operators (?:)
+String Operators (+,+=)
+typeof, yield, void, new, instanceof, in, delete
+
+Typescript operators:
+
+Arithmetic operators (+,-,*,/,%,++,--)
+Relational operators (==,!=,>,<,>=,<=)
+Logical operators (&&,||,!)
+Bitwise operators (&,|,^,~,<<,>>,>>>)
+Assignment operators (=,+=,-=,*=,/=,%=)
+Ternary/conditional operator (?:) 
+String operator (+,+=)
+Type Operator (typeof, instanceof)
+negation operator (-), Spread Operator(...)
+
+No difference in operators available in Javascript and Typescript.
+
+
+2. Read about looping & conditional constructs in Javascript Vs Typescript. Come out with the missing operators.
+
+looping & conditional constructs in Javascript:
+
+conditional constructs: (if-else,switch)
+
+looping constructs: (for,while,do-while)
+
+looping & conditional constructs in Typescript:
+
+conditional constructs: (if-else,switch)
+
+looping constructs: (for,for-in,for-of,while,do-while)
+
+for-of loop is missing in Javascript.
+
+3. Read through VCS & Git.
+
+https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control

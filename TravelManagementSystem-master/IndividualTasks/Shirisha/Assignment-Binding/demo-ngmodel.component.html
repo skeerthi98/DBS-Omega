@@ -1,0 +1,16 @@
+<div id="new">
+<fieldset>
+<legend style="color: brown">ngModelDemonstration</legend>
+
+
+                <label>Name: </label> <input type="text" [(ngModel)]="Name" placeholder="Enter Name"/> <br>
+        
+                <label>Enter your message </label> <br> <textarea type="text" rows="5" cols="33"  [(ngModel)]="Message" > </textarea> <br><br>
+        
+                <button onclick="alert('Received your Message..!')" (click)="Demo(Name,Message)">Submit</button>
+        
+                <p [style.color]="Prop" > Hello {{Name}}, </p> 
+        
+                <p> {{Message}} </p>
+        </fieldset>
+        </div>

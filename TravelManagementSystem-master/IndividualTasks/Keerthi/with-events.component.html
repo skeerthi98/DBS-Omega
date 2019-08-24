@@ -1,0 +1,32 @@
+
+<div>
+    <fieldset>
+        <legend>Login</legend>
+Username:<input type="text" class="in" [(ngModel)]="Username"value="" placeholder="Enter Username:"><br>
+Password:<input type="password" class="in" [(ngModel)]="Password" value="" placeholder="Enter password"><br>
+<button id="bu" onClick="alert('Login in Progress...')"(click)="Login(Username,Password)">Login</button>
+<p [ngStyle]="prop" >Hello {{username}}!!!</p>
+<div *ngIf="display;else elseTemp"><img src='/assets/mickey.jpg'/></div>
+<ng-template #elseTemp><img src='/assets/mini.jpg'/></ng-template>
+<h5 class="out">{{loginStatus}}</h5>
+</fieldset>
+</div>
+
+<!-- 
+    <ul [ngSwitch]="person">
+        <li *ngSwitchCase="'Anya'">Hello Anya</li>
+        <li *ngSwitchCase="'Kavya'">Hello Kavya</li>
+        <li *ngSwitchCase="'shirisha'">Hello shirisha</li>
+        <li *ngSwitchCase="''">
+                <ul *ngFor= "let p of people;index as i">
+                        <li>{{i+1}}. {{p}}</li>
+                    </ul>
+        </li>
+        <li *ngSwitchDefault>Name is not in list <button (click)='AddToList'>Add To List</button></li>
+        <input type="text" [(ngModel)]="person"> <br>
+<button (click)=addPerson(person)>Add to list</button>
+<ul *ngFor= "let p of people;index as i">
+    <li>{{i+1}}. {{p}}</li>
+</ul>
+    </ul> -->
+

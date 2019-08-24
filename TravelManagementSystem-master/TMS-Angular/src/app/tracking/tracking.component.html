@@ -1,0 +1,27 @@
+<!-- <p>tracking works!</p> -->
+<br><br><br><br><br>
+<img src="assets/track.gif" width="100" height="100"/>
+<form ngNativeValidate>
+    <span>Bus Number: </span> <input type="text" [(ngModel)]="BusNumber" 
+    placeholder="Enter Bus Number" name="busNumber" required>
+<br><br>
+<button onclick="alert('Tracking your bus..........')" 
+(click)="Track(BusNumber)">
+Track</button>
+<br><br>
+<div *ngIf="OnTrack==true;">
+    <h4>{{Source}} ______<img src="assets/bus.jpg" width="100" height="40"/>______  {{Destination}}</h4>
+        <table >
+                <tr>
+                    <th>Time</th>
+                    <th>Location</th>
+                </tr>
+                <tr *ngFor="let item of response">
+                    <td>{{item.time}}</td>
+                    <td>{{item.loc}}</td>
+                </tr>
+        </table>
+</div>
+
+
+</form>

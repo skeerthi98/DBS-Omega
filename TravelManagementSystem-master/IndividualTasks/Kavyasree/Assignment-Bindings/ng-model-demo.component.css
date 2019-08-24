@@ -1,0 +1,16 @@
+#Blog{
+    margin-top: 10em;
+    margin-left: 25em;
+    font-size: 20px;
+}
+
+input{
+    margin: 1em;
+    align-self: auto;
+}
+
+button{
+    margin-left: 10em;
+    background-color: blue;
+    color: white;
+}

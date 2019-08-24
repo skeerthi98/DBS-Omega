@@ -1,0 +1,34 @@
+{
+    "12345" : [
+        {
+            "loc" : "Secunderabad",
+            "time" : "12:00"
+        },
+        {
+            "loc" : "Hyderabad",
+            "time" : "01:25"
+        },
+        {
+            "loc" : "Belgaum",
+            "time" : "23:50"
+        }
+    ],
+    "54321" : [
+        {
+            "loc" : "Hyderabad",
+            "time" : "05:30"
+        },
+        {
+            "loc" : "Kurnool",
+            "time" : "08:25"
+        },
+        {
+            "loc" : "Raichur",
+            "time" : "21:55"
+        },
+        {
+            "loc" : "Mangalore",
+            "time" : "01:30"
+        }
+    ]
+}
