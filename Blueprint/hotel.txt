@@ -1,6 +1,0 @@
-Hotel Booking:
-
-1. View the hotels
-2. Get the details and reviews of the hotel
-3. Booking of Hotel
-4. Posting reviews and photographs

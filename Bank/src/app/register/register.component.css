@@ -1,13 +1,12 @@
-.button4 {
+ .btn {
     border-radius: 6px;
     border: 0.5px solid black;
-    margin-left: 20px;
-    padding: 3px 120px
+
 }
 .radius1
 {
     border-radius: 6px;
     border: 0.5px solid black;
-    background-color:lightgray;
-    padding: 1px 20px;
+    background-color: lightgrey;
+    overflow: hidden;
 }
