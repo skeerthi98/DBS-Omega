@@ -11,9 +11,9 @@
 }
     @keyframes example {
         0%   {color: red;}
-        25%  {color: orange;}
-        50%  {color: blue;}
-        100% {color: green;}
+        25%  {color: black;}
+        50%  {color:red;}
+        100% {color: black;}
       }
       div[name="blink"] {
            /* width: 100px;

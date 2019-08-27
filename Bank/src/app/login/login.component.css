@@ -11,3 +11,16 @@
     background-color:lightgray;
     padding: 1px 20px;
 }
+input
+{
+    outline-width: 21px;
+    outline-color: maroon;
+}
+h6{
+    text-align: center;
+    color: red;
+}
+a[href="login"]
+{
+    color: black;
+}

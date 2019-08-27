@@ -18,12 +18,19 @@
                         <span style="color:darkred"><b>iBanking</b></span>
                     </div>
                     <div class="card-body text-secondary">
+                            <div *ngIf="Fa==true ; else else1">
+                                    <h6>{{Loginstatus}}</h6>
+                                </div>
+                                <ng-template #else1>
+                                    <h6>{{Loginstatus}}</h6>
+                                </ng-template>
+                                <br>
                         <form ngNativeValidate>
-                        User ID<span style="color: red"><b>*</b></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input class="radius1" type="Username" name="username" required><br><br>
-                        Password<span style="color: red"><b>*</b></span>&nbsp;:&nbsp;&nbsp;<input type="password" class="radius1" name="password" required><br><br>
+                        User ID<span style="color: red"><b>*</b></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input class="radius1" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Only numbers" name="user" maxlength="10" [(ngModel)]="Userid" required><br><br>
+                        Password<span style="color: red"><b>*</b></span>&nbsp;:&nbsp;&nbsp;<input type="password" class="radius1" [(ngModel)]="Password" pattern=".{6,}" title="Enter six or more characters" name="psw" required><br><br>
                         <div class="row">
                                 <div class="col">
-                                  <button class="btn btn-danger" style="margin-left: 85px;padding: 1px 25px">Submit</button>
+                                  <button class="btn btn-danger" style="margin-left: 85px;padding: 1px 25px" (click)="Login(Userid,Password)">Submit</button>
                                 </div>
                                 <div class="col">
                                   <button class="btn" style="background-color:lightgray; padding: 1px 25px;margin-left: 210px;margin-top: -55px">
