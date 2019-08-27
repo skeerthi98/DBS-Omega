@@ -1,1 +1,1 @@
-# Team Omega => Online Baning System
+# Team Omega => Online Banking System
