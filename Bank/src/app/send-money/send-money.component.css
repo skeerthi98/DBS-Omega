@@ -1,0 +1,33 @@
+#to-center{
+    text-align : center;
+    margin-left : 150px;
+    margin-right : 150px;
+}
+button {
+    text-align : center;
+    background-color :  #EA1c2c;
+    color : white;
+    border-radius: 5px;
+}
+#to-center-btn{
+    text-align:center;
+}
+#message{
+    font-size : 25px;
+    color : blue;
+}
+#type{
+    
+    font-size : 28px;
+    background-color : #EA1c2c;
+    color:white;
+}
+
+.card {
+    width : 200px;
+    height : 200px;
+}
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
