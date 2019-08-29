@@ -18,6 +18,9 @@
     border: 0px;
     border-radius: 0rem;
 }
+.modal-header {
+  border-bottom: 0 none;
+}
 .alert-dismissible {
     padding-right: 0rem;
 }

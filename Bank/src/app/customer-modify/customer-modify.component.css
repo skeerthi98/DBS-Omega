@@ -1,56 +1,19 @@
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+.header
+{
+	text-align: left;
+	/* background-color: darkred; */
+	height: 20px;
+	color: White;
+	font-weight: bold;
 }
-.card{
-    margin: 10px;
-}
-.alert-warning { 
-    color: #fff;
-    background-color: lightgray;
-    border-color: #fff;
-}
-.alert {
-    position: relative;
-    padding: 0rem 0rem;
-    margin-bottom: 0rem;
-    border: 0px;
-    border-radius: 0rem;
-}
-.alert-dismissible {
-    padding-right: 0rem;
-}
-.alert-dismissible .close {
-    padding: 0rem 0rem;
-    color: #f2f2f2;
-    background-color: #660000;
-}
-#bar{
-    color: #f2f2f2;
-    background-color: #660000;
-}
-.modal-header {
-  border-bottom: 0 none;
-}
-
-.card-title {
-    padding: 0rem;
-}
-
-#Accounts {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  h5[title="Help"]{
-    text-align: center;
-    color: red;
-  }
-  #Accounts td, #Accounts thead {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
+/* option:checked,option:hover { 
+    background-color:darkred;
+    color:#000;
+} */
+/* 
+select:active {
+    outline-color: red
+  } */
   .dropdown-submenu {
     position: relative;
   }
@@ -128,9 +91,33 @@
 {
   background-color:darkred;
 } 
-  #Accounts thead {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #ddd;
-  }
+
+
+.headerAck
+{
+	text-align: center;
+	font-size: 25px;
+	/* background-color: darkred; */
+	height: 20px;
+	color: White;
+	font-weight: bold;
+}
+/* input{
+    outline-color: maroon;
+} */
+body
+{
+	font-family: Verdana;
+	font-size: 12px;
+/*	border-width: 1px 1px 1px 1px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-style: solid;
+	border-color: Black; */
+	background-color: rgb(240, 231, 231);
+	width: 80%;
+    text-align:left;
+    margin-top: 10%;
+   	margin-left:10%;
+	
+	}

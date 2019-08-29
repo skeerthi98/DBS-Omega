@@ -51,8 +51,8 @@
                             <span>Profiling</span>
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" >Register a Customer</a>
-                            <a class="dropdown-item" >Modify Customer Details</a>
+                            <a class="dropdown-item" href="customerregister">Register a Customer</a>
+                            <a class="dropdown-item" href="customermodify">Modify Customer Details</a>
                             <a class="dropdown-item" >Delete a Customer</a>
                         </div>
                     </ul>        
@@ -60,4 +60,101 @@
         </nav>
     </section>
 <div style="background-color: lightgray">
+        <br><br>
+        <h4> DashBoard </h4>
+        <a href="userhome" style="float: right;margin-top:-35px;margin-right: 500px;color: maroon">Refresh Accounts</a>
+        <div style="float: right;margin-top:-35px;margin-right: 455px">|</div>
+        <a href="userhome" style="float: right;margin-top:-35px;margin-right: 280px;color: maroon">Restore Dashboard</a>
+        <div style="float: right;margin-top:-35px;margin-right:240px">|</div>
+        <a href="#" style="float: right;margin-top:-35px;margin-right: 160px;color: maroon" data-toggle="modal" data-target="#myModal">Logout</a>
+              <div class="modal" style="border-block: maroon" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+              
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 style="color: maroon">Application Signoff</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+              
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                   <span style="margin-left: 120px"> Are you sure you want to logout?</span>
+                    <br><br><br><br>
+                    </div>
+              
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="login">Cancel</button>
+                            <button type="button" class="btn btn-success" routerLink="/loginadmin" data-dismiss="modal">Logout</button>
+                          </div>
+                  </div>
+                </div>
+              </div>        
+    <div>        
+        <div class="container">
+                <main class="cards">
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <article class="card shadow text-dark" style="width: 20rem">                    
+                            <div class="card-title">
+                                <div id="bar">
+                                    <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                                    <table>
+                                        <tr>
+                                            <td style="padding-left: 10px"><img src="/assets/w6.png" alt="" style="width: 1.5rem; height: 1.5rem;"></td>
+                                            <td style="padding-top: 10px; padding-left: 10px"><h5 class="card-title">Notifications</h5></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-body">                                
+                                <p class="card-text">
+                                   Your Login Password expires in <br>
+                                   <span style="color: red;">393 days on 22/09/2020 </span>
+                                </p>
+                            </div>
+                            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                        </article>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <article class="card shadow text-dark" style="width: 45rem;">
+                            <div class="card-title">
+                                <div id="bar">
+                                    <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                                    <table>
+                                        <tr>
+                                            <td style="padding-left: 10px"><img src="/assets/w19.png" alt="" style="width: 1.5rem; height: 1.5rem;"></td>
+                                            <td style="padding-top: 10px; padding-left: 10px"><h5 class="card-title">Operative Accounts</h5></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>   
+                            <div class="card-body"> 
+                                <table id="Accounts">
+                                    <thead >
+                                        <td >Nickname</td>
+                                        <td >A/c ID</td>
+                                        <td >A/c Type</td>
+                                        <td >Available Balance</td>
+                                    </thead>
+                                    <tr>
+                                        <td >Manoj K</td>
+                                        <td >881032244323</td>
+                                        <td >Savings</td>
+                                        <td >30000</td>
+                                    </tr>
+                                    <tr>
+                                        <td >Manoj K</td>
+                                        <td >281835644363</td>
+                                        <td >Loans</td>
+                                        <td >105000</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br> <br> <br> <br> <br> <br> <br> <br> <br>
+                        </article>
+                    </div>
+                </main>
+            </div>
+</div>
 </div>

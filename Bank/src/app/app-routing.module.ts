@@ -13,6 +13,9 @@ import {AdminhomeComponent} from './adminhome/adminhome.component';
 import {LoginadminComponent} from './loginadmin/loginadmin.component';
 import {AccountopeninghomeComponent} from './accountopeninghome/accountopeninghome.component';
 import { AccountopeningformComponent } from './accountopeningform/accountopeningform.component';
+import {FundsTransferComponent} from './funds-transfer/funds-transfer.component';
+import {CustomerModifyComponent} from './customer-modify/customer-modify.component';
+import {CustomerRegistrationComponent} from './customer-registration/customer-registration.component';
 export const routes:Routes = [
    {path:'',redirectTo:'home',pathMatch:'full'},
  {path:"login",component:LoginComponent},
@@ -25,6 +28,9 @@ export const routes:Routes = [
 {path:"adminhome",component:AdminhomeComponent},
 {path:"accountopeninghome",component:AccountopeninghomeComponent},
 {path:"accountopeninghome",component:AccountopeningformComponent},
+{path:"fundstransfer",component:FundsTransferComponent},
+{path:"customermodify",component:CustomerModifyComponent},
+{path:"customerregister",component:CustomerRegistrationComponent},
  {path:"**",component:HomeComponent}
 ];
 
