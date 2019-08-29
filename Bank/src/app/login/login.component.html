@@ -1,39 +1,39 @@
-<header style="background-color: black">
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark">
         <a class="navbar-brand" href="#">
             <img src="../../assets/logo.png" title="DBS" height="100px" width="250px">
         </a> 
         <a class="navbar-brand ml-auto" name="pull">
             <img src="../../assets/call.png" title="Help" height="50px" width="50px">
         </a>
-        <h5 style="float: right" style="color: red" title="Help">Toll Free Number : 040 425 1515</h5>
+        <h5 title="Help">Toll Free Number : 040 425 1515</h5>
     </nav>
 </header>
-<section style="background-color: cornsilk">
+<section>
     <div class="container"style="background-color:cornsilk">
         <div class="row">
             <div class="col"><br>
-                <div class="card shadow border-secondary mb-3" style="max-width: 25rem;background-color:cornsilk">
-                    <div class="card-header" style="text-align: center; font-size: 25px">Welcome to <b>DBS </b>
-                        <span style="color:darkred"><b>iBanking</b></span>
+                <div class="card shadow border-secondary mb-3">
+                    <div class="card-header">Welcome to <b>DBS </b>
+                        <span><b>iBanking</b></span>
                     </div>
                     <div class="card-body text-secondary">
-                            <div *ngIf="Fa==true ; else else1">
-                                    <h6>{{Loginstatus}}</h6>
+                            <!-- <div *ngIf="Fa==true ; else else1">
+                              <>
                                 </div>
                                 <ng-template #else1>
                                     <h6>{{Loginstatus}}</h6>
                                 </ng-template>
-                                <br>
+                                <br> -->
                         <form ngNativeValidate>
-                        User ID<span style="color: red"><b>*</b></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input class="radius1" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Only numbers" name="user" maxlength="10" [(ngModel)]="Userid" required><br><br>
-                        Password<span style="color: red"><b>*</b></span>&nbsp;:&nbsp;&nbsp;<input type="password" class="radius1" [(ngModel)]="Password" pattern=".{6,}" title="Enter six or more characters" name="psw" required><br><br>
+                        User ID<span><b>*</b></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input class="radius1" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Only numbers" name="user" maxlength="10" [(ngModel)]="Userid" required><br><br>
+                        Password<span><b>*</b></span>&nbsp;:&nbsp;&nbsp;<input type="password" class="radius1" [(ngModel)]="Password" pattern=".{6,}" title="Enter six or more characters" name="psw" required><br><br>
                         <div class="row">
                                 <div class="col">
-                                  <button class="btn btn-danger" style="margin-left: 85px;padding: 1px 25px" (click)="Login(Userid,Password)">Submit</button>
+                                  <button class="btn btn-danger" (click)="Login(Userid,Password)">Submit</button>
                                 </div>
                                 <div class="col">
-                                  <button class="btn" style="background-color:lightgray; padding: 1px 25px;margin-left: 210px;margin-top: -55px">
+                                  <button class="btn">
                                    <a href="login"> Reset</a>
                                 </button>
                                 </div>
@@ -41,15 +41,15 @@
                         </form>
                     </div>
                     <span style='font-size:15px;margin-left: 3px;padding: 1px 20px'>&#10143;
-                            <a href="register" style="color: darkred;font-size: 13px"> Set/Reset your Internet Banking Password</a>
+                            <a href="register"> Set/Reset your Internet Banking Password</a>
                     </span>
                     <span style='font-size:15px;margin-left: 3px;padding: 1px 20px'>&#10143;
-                            <a href="register" style="color: darkred;font-size: 13px">  Retrieve your Internet Banking User ID</a>
+                            <a href="register">  Retrieve your Internet Banking User ID</a>
                     </span><br>
                     <form>
                     <div class="card-footer">Not an iBanking Customer?</div>
                     <button class="button button4">
-                        <a href="register" style="color:black">Sign Up Now</a>
+                        <a href="register">Sign Up Now</a>
                     </button>
                     <br><br>
                 </form>
@@ -61,49 +61,41 @@
         </div>
 </div>
 </section>
-<Footer style="background-color:darkred">
+<Footer>
     <div class="container-fluid">
     <div class="row">
     <div class="col-lg-3"><br>
-        <ul class="list-unstyled" style="color:black">
+        <ul class="list-unstyled">
             <li>About DBS</li>
             <li>Awards & Rewards</li>
-            <li>Annual Report</li>
-            <li>Careers</li>
-            <li>Caution To Public</li>                          
+            <li>Annual Report</li>                        
         </ul>
     </div>
     <div class="col-lg-3"><br>
-        <ul class="list-unstyled" style="color:black">
-            <li>Citizen's Charter</li>
+        <ul class="list-unstyled">
             <li>Complaint / Grievance</li>
             <li>Disclosures</li>
-            <li>Events</li>
-            <li>Minorities</li>
+            <li>Service charges and fees</li>
         </ul>
     </div>
     <div class="col-lg-3"><br>
-        <ul class="list-unstyled" style="color:black">
+        <ul class="list-unstyled">
             <li>Policies & Guidelines</li>
             <li>Banking forms</li>
             <li>Privacy Policy</li>
-            <li>Service charges and fees</li>
-            <li>Representative Offices</li>
         </ul>
     </div>
     <div class="col-lg-3"><br>
-        <ul class="list-unstyled" style="color:black">
-            <li>Retirees Corner</li>
-            <li>RTI Act</li>
-            <li>Suit Filed Cases Of Wilful Defaulters</li>
-            <li>Tools</li>
+        <ul class="list-unstyled">
+            <li>Careers</li>
+            <li>Caution To Public</li>  
             <li>Banking Facilities for Persons with &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Needs</li>
         </ul>
     </div>
 </div>
 </div>
-<pre style="color: white;text-align: center"> Investor Relations | Bulletin | Unclaimed Deposit | DNCR | Miscellaneous | Holiday List | Photo Gallery | Webcast | Disclaimer | Locate Us | Contact Us</pre>
-<div class="label-back-to-top" style="color: white">&nbsp;&nbsp;Back To Top</div>
+<pre style="color: white;text-align: center">Miscellaneous | Holiday List | Photo Gallery | Webcast | Disclaimer | Locate Us | Contact Us</pre>
+<a class="top" href="login">Back To Top</a>
 </Footer>
 <br>
 <h6><pre style="text-align: center">Terms & Conditions | Privacy Policy | ©2019 DBS Bank India Limited                                                                                          Social media</pre></h6>

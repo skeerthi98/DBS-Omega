@@ -1,0 +1,97 @@
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="../../assets/logo.png" title="DBS" height="100px" width="250px">
+            </a> 
+            <a class="navbar-brand ml-auto" name="pull">
+                <img src="../../assets/call.png" title="Help" height="50px" width="50px">
+            </a>
+            <h5 title="Help">Toll Free Number : 040 425 1515</h5>
+        </nav>
+    </header>
+    <section>
+        <div class="container"style="background-color:cornsilk">
+            <div class="row">
+                <div class="col"><br>
+                    <div class="card shadow border-secondary mb-3">
+                        <div class="card-header">Welcome to <b>DBS </b>
+                            <span><b>iBanking</b></span>
+                        </div>
+                        <div class="card-body text-secondary">
+                                <div *ngIf="Fa==true ; else else1">
+                                    <div routerLink="userhome"></div>
+                                    </div>
+                                    <ng-template #else1>
+                                        <h6>{{Loginstatus}}</h6>
+                                    </ng-template>
+                                    <br>
+                            <form ngNativeValidate>
+                            User ID<span><b>*</b></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input class="radius1" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Only numbers" name="user" maxlength="10" [(ngModel)]="Userid" required><br><br>
+                            Password<span><b>*</b></span>&nbsp;:&nbsp;&nbsp;<input type="password" class="radius1" [(ngModel)]="Password" pattern=".{6,}" title="Enter six or more characters" name="psw" required><br><br>
+                            <div class="row">
+                                    <div class="col">
+                                      <button class="btn btn-danger" (click)="Login(Userid,Password)">Submit</button>
+                                    </div>
+                                    <div class="col">
+                                      <button class="btn">
+                                       <a href="login"> Reset</a>
+                                    </button>
+                                    </div>
+                                  </div>
+                            </form>
+                        </div>
+                        <span style='font-size:15px;margin-left: 3px;padding: 1px 20px'>&#10143;
+                                <a href="register"> Set/Reset your Internet Banking Password</a>
+                        </span>
+                        <span style='font-size:15px;margin-left: 3px;padding: 1px 20px'>&#10143;
+                                <a href="register">  Retrieve your Internet Banking User ID</a>
+                        </span><br>
+                        <form>
+                        <br><br>
+                    </form>
+                    </div>        
+                </div>
+                <div class="col">
+                    <img src="../../assets/loginpage.png" style="max-width: 700px" title="login">
+                </div>
+            </div>
+    </div>
+    </section>
+    <Footer>
+        <div class="container-fluid">
+        <div class="row">
+        <div class="col-lg-3"><br>
+            <ul class="list-unstyled">
+                <li>About DBS</li>
+                <li>Awards & Rewards</li>
+                <li>Annual Report</li>                        
+            </ul>
+        </div>
+        <div class="col-lg-3"><br>
+            <ul class="list-unstyled">
+                <li>Complaint / Grievance</li>
+                <li>Disclosures</li>
+                <li>Service charges and fees</li>
+            </ul>
+        </div>
+        <div class="col-lg-3"><br>
+            <ul class="list-unstyled">
+                <li>Policies & Guidelines</li>
+                <li>Banking forms</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+        <div class="col-lg-3"><br>
+            <ul class="list-unstyled">
+                <li>Careers</li>
+                <li>Caution To Public</li>  
+                <li>Banking Facilities for Persons with &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Needs</li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <pre style="color: white;text-align: center">Miscellaneous | Holiday List | Photo Gallery | Webcast | Disclaimer | Locate Us | Contact Us</pre>
+    <a class="top" href="login">Back To Top</a>
+    </Footer>
+    <br>
+    <h6><pre style="text-align: center">Terms & Conditions | Privacy Policy | ©2019 DBS Bank India Limited                                                                                          Social media</pre></h6>

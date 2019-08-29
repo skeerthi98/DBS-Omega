@@ -1,4 +1,4 @@
-<header style="background-color: black">
+<header>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <a class="navbar-brand" href="#">
                 <img src="../../assets/logo.png" title="DBS" height="100px" width="250px">
@@ -6,13 +6,13 @@
             <a class="navbar-brand ml-auto" name="pull">
                 <img src="../../assets/call.png" title="Help" height="50px" width="50px">
             </a>
-            <h5 style="float: right" style="color: red" title="Help">Toll Free Number : 040 425 1515</h5>
+            <h5 title="Help">Toll Free Number : 040 425 1515</h5>
         </nav>
 </header>
 <section>
   <div>
-        <div class="card shadow border-secondary mb-3" style="margin: 35px 70px ">
-            <div class="card-header" style="text-align: left; font-size: 25px;background-color:darkred;color: white">
+        <div class="card shadow border-secondary mb-3">
+            <div class="card-header">
                 Online Banking Services
                 <div style="text-align: right; font-size: 13px;background-color:darkred;color: white; position: relative;">
                         *&nbsp;Required Fields
@@ -21,11 +21,11 @@
             <div *ngIf="Fa==true ; else else1">
               <b style="color: red;background-color: rgb(240,231,231);text-align: center;margin: 450px">{{Registerstatus}}</b>
           </div>
-                <div class="card-body text-secondary" style="background-color: rgb(240,231,231);">
+                <div class="card-body text-secondary">
                     <form ngNativeValidate>
                         <div class="row">
                             <div class="col-lg-3">
-                            <span style="color:black">Select</span><span style="color: red"><b>*</b></span></div>
+                            <span>Select</span><span><b>*</b></span></div>
                             <div class="col-lg-2">    
                                 <div class="input-group mb-3">
                                     <select class="custom-select" id="inputGroupSelect01" name="utype" style="background-color: rgb(240,231,231);">
@@ -39,7 +39,7 @@
                         </div>
                         <div class="row">
                                 <div class="col-lg-3">
-                                <span style="color:black">Country</span><span style="color: red"><b>*</b></span></div>
+                                <span>Country</span><span><b>*</b></span></div>
                                 <div class="col-lg-2">    
                                           <div class="input-group mb-3">
                                               <select class="custom-select" id="inputGroupSelect02" style="background-color: rgb(240,231,231);">
@@ -56,31 +56,46 @@
                             </div>
                             <div class="row">
                                     <div class="col-lg-3">
-                            <span style="color:black">ATM/Debit Card Number</span><span style="color: red"><b>*</b></span></div>
+                            <span>ATM/Debit Card Number</span><span><b>*</b></span></div>
                             <div class="col-lg-3">
                             <input type="text" class="radius1" [(ngModel)]="Dnumber" name="Dnumber" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Enter 12 numbers"  maxlength="12" required><br><br></div></div>
 
                             <div class="row">
                                     <div class="col-lg-3">
-                            <span style="color:black">Card PIN</span><span style="color: red"><b>*</b></span></div>
+                            <span>Card PIN</span><span><b>*</b></span></div>
                             <div class="col-lg-3">                               
                             <input type="password" class="radius1" [(ngModel)]="Pin" name="PIN" title="Enter 3 numbers" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="3" required><br><br></div></div>
+
                             <div class="row">
                                     <div class="col-lg-3">
-                            <span style="color:black">Aadhar Card Number</span><span style="color: red"><b>*</b></span></div>
+                            <span>Aadhar Card Number</span><span><b>*</b></span></div>
                             <div class="col-lg-3">
                             <input type="text" class="radius1" title="Enter 12 numbers" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="Anumber" name="Anumber" maxlength="12" required><br><br></div></div>
+
                             <div class="row">
                                     <div class="col-lg-3">
-                            <span style="color:black">Email Address</span><span style="color: red"><b>*</b></span></div>
+                            <span>Email Address</span><span><b>*</b></span></div>
                             <div class="col-lg-3">
                             <input type="email" class="radius1" [(ngModel)]="Email" name="Email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" title="Enter email in email format" required><br><br></div></div>
+
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <span>Password</span><span><b>*</b></span></div>
+                                    <div class="col-lg-3">
+                                <input type="password" class="radius1" [(ngModel)]="Pqw" name="Pqw" title="Enter Password" required><br><br></div></div>
+
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <span>Repeat Password</span><span><b>*</b></span></div>
+                                        <div class="col-lg-3">
+                            <input type="password" class="radius1" [(ngModel)]="Psw" name="Psw"  title="Enter Password" required><br><br></div></div>
+
                             <div class="row">
                                     <div class="col-lg-3">
-                            <span style="color:black">Date of Birth</span><span style="color: red"><b>*</b></span></div>
+                            <span>Date of Birth</span><span><b>*</b></span></div>
                             <div class="col-lg-3">
                             <input type="date" class="radius1" [(ngModel)]="Date" name="Date" title="Enter date in requested format" required><br><br></div></div>                
-                    <div  style="color: red">
+                    <div style="color: red">
                     &nbsp;<img src="../../assets/_ionicons_svg_md-information-circle-outline.svg" height="21px" width="21px" name="information">
                             Please ensure that your DBS Debit card is active. DBS iBanking access is allowed only if we have your PAN details in our records. 
                             If you do not have DBS Debit  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; card or wish to submit your PAN details, please visit your nearest DBS Branch.
@@ -88,11 +103,11 @@
                     <div style="background-color:rgb(240,231,231);">                        
                    <div class="row" style="border-radius: 6px;margin-left: 0.5px">                       
                         <div class="col-1">
-                        <button class="btn" style="padding: 1px 25px">
+                        <button class="btn">
                           <a href="register">Reset</a>
                         </button></div>
                         <div class="col-1">
-                        <button class="btn" style="padding: 1px 25px;" (click)=Register(Dnumber,Pin,Anumber,Email,Date)>Submit</button></div>
+                        <button class="btn" (click)=Register(Dnumber,Pin,Anumber,Email,Date,Pqw,Psw)>Submit</button></div>
                         <div class="col-10" style="text-align: right">
                         <img src="../../assets/_ionicons_svg_md-help-circle-outline.svg" height="21px" width="21px" name="help-circle-outline">help&nbsp;
                     </div>

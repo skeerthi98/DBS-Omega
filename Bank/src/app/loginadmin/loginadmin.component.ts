@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import {LoginService} from '../login.service';
 import {Router} from '@angular/router';
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-loginadmin',
+  templateUrl: './loginadmin.component.html',
+  styleUrls: ['./loginadmin.component.css']
 })
-export class LoginComponent {
+export class LoginadminComponent {
   constructor(public httpLogin:LoginService,private router:Router) {}
   userid:number;
     Password:string;
@@ -20,7 +20,7 @@ export class LoginComponent {
   this.Loginstatus="Login Successful";
   this.httpLogin.Getcustomers();
 this.Fa=true;
-this.router.navigateByUrl('/userhome');
+this.router.navigateByUrl('/adminhome');
     }  
     else    
     {

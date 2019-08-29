@@ -19,7 +19,7 @@ export class LoginService implements OnDestroy {
         data => { console.log("Get Request is successful by array ", data);this.customers=data;this.status = "Get Request is successful by array";},
         error => {console.log("Error", error);this.status = "Error";});
   }
-  PostCall(pDnumber,pPin,pAnumber,pEmail,pDob,count){
+  PostCall(pDnumber,pPin,pAnumber,pEmail,pDob,count,pPassword){
     this.http.post("http://localhost:3000/Users",
         {
 	 "ATM/Debit Card Number":pDnumber,
@@ -27,7 +27,8 @@ export class LoginService implements OnDestroy {
 	 "Aadhar Card Number": pAnumber,
       "Email Address": pEmail,
    "Date of Birth":pDob,
-   "id": count
+   "id": count,
+   "password":pPassword
 
         })
         .subscribe(

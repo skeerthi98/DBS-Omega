@@ -1,0 +1,154 @@
+<header>
+        <marquee class="rounded" behavior="scroll" direction="left">
+                <b>Welcome to DBS Internet Banking</b>
+             </marquee>
+    <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand" href="#">
+                    <img src="../../assets/logo.png" title="DBS" height="85px" width="250px">
+                </a> 
+                <a href="profile" style="float: right;margin-left: 850px;color: white">Welcome Sangeeta Joshi
+                </a>
+    </nav>
+</header>
+<section>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <ul class="navbar-nav mr-auto">
+                    <ul class="nav-item">
+                            <a class="nav-link" name="main" href="userhome" style="color: white">Home</a>
+                    </ul>
+                <ul class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span>Accounts</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="summary">Account Summary</a>
+                        <div class="dropdown-submenu">
+                                <a class="dropdown-item">Requests<span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item"> Interest Certificate for Deposists/Savings </a>
+                                  <a class="dropdown-item"> Link your Gas ID </a>
+                                  <a class="dropdown-item"> Provisional Certificate for Loans </a>
+                                  <a class="dropdown-item"> Interest Certificate for Loans </a>
+                                </div>
+                        </div>
+                    </div>
+                </ul>
+                <ul class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span>Value Added Services</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" >Service Requests</a>
+                        <a class="dropdown-item" >Cheque Book Request Enquiry</a>
+                        <a class="dropdown-item" >Aadhar Registration</a>
+                        <a class="dropdown-item" >Donations</a>
+                        <a class="dropdown-item" >GSTN Registration</a>
+                        <a class="dropdown-item" >Transaction Limit Enquiry</a>
+                        <a class="dropdown-item" >Request for Locker</a>
+                    </div>
+                </ul>
+                <ul class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span>Transactions</span>
+                    </a>
+                    <div class="dropdown-menu">
+                            <div class="dropdown-submenu">
+                                    <a class="dropdown-item">Funds Transfer<span class="caret"></span></a>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item"> Own Accounts </a>
+                                      <a class="dropdown-item"> Other DBS Bank Accounts </a>
+                                      <a class="dropdown-item"> Other Bank - NEFT/RTGS </a>
+                                      <a class="dropdown-item"> IMPS (Instant Transfer 24*7) </a>
+                                    </div>
+                            </div>
+                            <div class="dropdown-submenu">
+                                    <a class="dropdown-item">Transaction Status<span class="caret"></span></a>
+                                    <div class="dropdown-menu">
+                                      <a class="dropdown-item"> All Transactions </a>
+                                      <a class="dropdown-item"> Scheduled Transactions </a>
+                                      <a class="dropdown-item"> Completed Transactions </a>
+                                      <a class="dropdown-item"> Saved Transactions </a>
+                                    </div>
+                            </div>
+                    </div>
+                </ul>
+                <ul class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span>Personal Security Settings</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-submenu">
+                                <a class="dropdown-item">Password Management<span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item"> Enable Transaction Password </a>
+                                  <a class="dropdown-item"> Disable Transaction Password </a>
+                                  <a class="dropdown-item"> Generate New Transaction Password  </a>
+                                  <a class="dropdown-item"> Change Login/Transaction Password & User ID </a>
+                                </div>
+                        </div>
+                    </div>
+                </ul>
+                <ul class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span>Card Services</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-submenu">
+                                <a class="dropdown-item">Credit Cards<span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item"> Link/Pay to Linked Cards </a>
+                                </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                                <a class="dropdown-item">Debit Cards<span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item"> Debit Card Reissue Request </a>
+                                  <a class="dropdown-item">  Debit Card Activation </a>
+                                  <a class="dropdown-item"> Block Debit Card</a>
+                                </div>
+                        </div>
+                    </div>
+                </ul>         
+            </ul>
+        </nav>
+    </section>
+<div class="container">
+    <div class="card-deck">
+            <div class="card bg-light shadow text-dark" >
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img class="customerPhoto" src="../../assets/download.jpg" style="width:125px;height:150px;"  title="Sangeeta Joshi">
+                    </div>
+                    <div class="col">
+                        <div class="card-body">
+                            <br>
+                            <h5 class="card-title">Personal Details</h5>
+                            <p class="card-text">
+                                <label><b>First Name: </b> </label> <span contenteditable="true" > {{FirstName}} </span> <br>
+                                <label><b>Last Name: </b> </label> <span contenteditable="true" > {{LastName}} </span> <br>
+                                <label><b>Permanent Address: </b> </label> <span contenteditable="true" > {{Address}} </span>
+                            </p>
+                            <hr>
+                            <h5 class="card-title">Contact Details</h5>
+                            <p class="card-text">
+                                <label><b>Contact Number: </b> </label> <span contenteditable="true" > {{MobileNo}} </span> <br>
+                                <label><b>Email Address: </b> </label> <span contenteditable="true" > {{EmailId}} </span><br>
+                                <label><b>Alternate Email Address: </b> </label> <span contenteditable="true" > {{AlternateEmail}} </span>
+                            </p>
+                            <hr>
+                            <h5 class="card-title">Bank Details</h5>
+                            <p class="card-text">
+                                <label><b>User ID: </b> </label> <span contenteditable="true" > {{UserID}} </span> <br>
+                                <label><b>IFSC Code: </b> </label> <span contenteditable="true" > {{IfscCode}} </span> <br>
+                            </p>
+                            <hr>
+                            <h5 class="card-title">Account Details</h5>
+                            <p class="card-text">
+                                <label><b>Account Number: </b> </label> <span contenteditable="true" > {{AccountNo}} </span><br>
+                                <label><b>Available Balance: </b> </label> <span contenteditable="true" > {{AvailableBalance}} </span> <br>
+                                <label><b>Authorised Transaction Limit: </b>  </label> <span contenteditable="true" > {{TransactionLimit}} </span> <br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>

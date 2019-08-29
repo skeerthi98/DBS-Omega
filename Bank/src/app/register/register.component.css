@@ -22,3 +22,38 @@ a[href="register"]
 {
     background-color: rgb(240,231,231);
 }
+header{
+    background-color: black;
+  }
+  h5[title="Help"]{
+    text-align: center;
+    color: red;
+}
+.card.shadow.border-secondary.mb-3
+{
+    margin: 35px 70px
+}
+.card-header
+{
+    text-align: left; 
+    font-size: 25px;
+    background-color:darkred;
+    color: white
+}
+.btn{
+    padding: 1px 25px
+}
+.btn:hover{
+    color: maroon
+}
+div > span{
+    color:black
+}
+span ~ span
+{
+    color: red
+}
+.card-body.text-secondary
+{
+    background-color: rgb(240,231,231);
+}

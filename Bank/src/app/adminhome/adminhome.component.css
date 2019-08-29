@@ -1,0 +1,133 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+.card{
+    margin: 10px;
+}
+.alert-warning { 
+    color: #fff;
+    background-color: lightgray;
+    border-color: #fff;
+}
+.alert {
+    position: relative;
+    padding: 0rem 0rem;
+    margin-bottom: 0rem;
+    border: 0px;
+    border-radius: 0rem;
+}
+.alert-dismissible {
+    padding-right: 0rem;
+}
+.alert-dismissible .close {
+    padding: 0rem 0rem;
+    color: #f2f2f2;
+    background-color: #660000;
+}
+#bar{
+    color: #f2f2f2;
+    background-color: #660000;
+}
+
+.card-title {
+    padding: 0rem;
+}
+
+#Accounts {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  h5[title="Help"]{
+    text-align: center;
+    color: red;
+  }
+  #Accounts td, #Accounts thead {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .dropdown-submenu {
+    position: relative;
+  }
+  .dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+  }
+  .dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+  }
+  .dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+  }
+  .dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+  }
+  .dropdown-submenu.pull-left {
+    float: none;
+  }
+  .dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+  }
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -1px;
+  }
+  
+  marquee
+{
+  background-color: black;
+  color: white
+}
+  header{
+    background-color:black
+  }
+  img[class="power"]:hover
+  {
+    background-color: red
+  }
+  h4{
+      margin-left: 130px
+  }
+  a > span{
+    color: white;
+  }
+  a:hover > span{
+    color: red
+  }
+  a[name="main"]:hover
+  {
+      color: red;
+  }
+
+  section
+{
+  background-color:darkred;
+} 
+  #Accounts thead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ddd;
+  }

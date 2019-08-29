@@ -35,11 +35,9 @@
         width: 1em;
         margin-left: 5px;
       }
-
 .dropdown-submenu {
   position: relative;
 }
-
 .dropdown-submenu>.dropdown-menu {
   top: 0;
   left: 100%;
@@ -49,11 +47,9 @@
   -moz-border-radius: 0 6px 6px;
   border-radius: 0 6px 6px 6px;
 }
-
 .dropdown-submenu:hover>.dropdown-menu {
   display: block;
 }
-
 .dropdown-submenu>a:after {
   display: block;
   content: " ";
@@ -67,15 +63,12 @@
   margin-top: 5px;
   margin-right: -10px;
 }
-
 .dropdown-submenu:hover>a:after {
   border-left-color: #fff;
 }
-
 .dropdown-submenu.pull-left {
   float: none;
 }
-
 .dropdown-submenu.pull-left>.dropdown-menu {
   left: -100%;
   margin-left: 10px;
@@ -87,4 +80,46 @@
   top: 0;
   left: 100%;
   margin-top: -1px;
+}
+h6{
+  text-align: center
+}
+Footer
+{
+  background-color:darkred;
+}
+.list-unstyled
+{
+  color:black;
+}
+marquee
+{
+  background-color: salmon;
+}
+header{
+  background-color: black;
+}
+h5[title="Help"]{
+  text-align: center;
+  color: red;
+}
+section
+{
+  background-color:darkred;
+}
+a[href="home"]
+{
+    color: white;
+    margin: 3px
+}
+a[href="home"]:hover
+{
+    color: red;
+    margin: 3px
+}
+a > span{
+  color: white;
+}
+a:hover > span{
+  color: red
 }
