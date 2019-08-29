@@ -1,6 +1,13 @@
 <title>Money Transfer | DBS Omega</title>
  <!-- IMPS,NEFT,RTGS,UPI -->
-
+ 
+<div class="to-left">
+    <tr *ngFor="let item of details">
+      <span> Hello <b>{{item.name}}</b></span><br>
+      <span>Account Number : <b>{{item.accnum}}</b></span><br>
+      <span>Your Balance Amount : <b>{{item.balance}}</b> </span>
+    </tr> 
+</div>
   <br>
   <div *ngIf="OnSelectPaymentType == false" id="to-center">
  <div class="py-5">
@@ -61,7 +68,7 @@
     
     <div class="form-group">
       <br>
-      <label class="accountnum">Your Account Number : {{SendersAccountNumber}}</label> <br>
+       <br>
       <label >Beneficiary Account Number:</label>
         <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
       </div>
@@ -84,11 +91,9 @@
       <button type="submit" class="btn btn-primary"  (click)="TransferMoneyImps(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
       <br><br>
 
-      <div id="to-center">
-          <span id="message">
-              {{Message}} <br>
-           </span>
-      </div>
+      
+             <b> {{Message}} </b><br>
+
   </div>
 
 <div *ngIf="Rtgs == true" id="to-center">
@@ -98,8 +103,7 @@
   
   
       <div class="form-group">
-          <br>
-          <label class="accountnum">Your Account Number : {{SendersAccountNumber}}</label> <br>
+          <br><br>
           <label >Beneficiary Account Number:</label>
             <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
           </div>
@@ -123,11 +127,11 @@
           <br><br>
     
 
-    <div id="to-center">
-        <span id="message">
-            {{Message}} <br>
-         </span>
-    </div>
+    <!-- <div id="to-center"> -->
+        <!-- <span id="message"> -->
+          <b> {{Message}} </b> <br>
+         <!-- </span> -->
+    <!-- </div> -->
 
 </div>
 
@@ -139,7 +143,7 @@
 
     <div class="form-group">
         <br>
-        <label class="accountnum">Your Account Number : {{SendersAccountNumber}}</label> <br>
+ <br>
         <label >Beneficiary Account Number:</label>
           <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required/>
         </div>
@@ -163,11 +167,9 @@
         <br><br>
   
 
-  <div id="to-center">
-      <span id="message">
-          {{Message}} <br>
-       </span>
-  </div>
+  
+        <b> {{Message}} </b> <br>
+    
 
 </div>
 
@@ -189,17 +191,15 @@
   <button type="submit" class="btn btn-primary"  (click)="TransferMoneyUpi(upiId,money)">Transfer</button>
   <br><br>
 
-  <div id="to-center">
-      <span id="message">
-          {{Message}} <br>
-       </span>
-  </div>
+  
+        <b> {{Message}} </b> <br>
+    
 
 </div>
 
 
   <div *ngIf="OnTransfer == true" id="to-center">
     <span id="message">
-        Your available balance : {{SendersBalance}}
+        Your available balance : <b> {{SendersBalance}} </b>
     </span>
   </div>
