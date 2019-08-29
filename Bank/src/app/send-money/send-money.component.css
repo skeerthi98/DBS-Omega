@@ -1,7 +1,7 @@
 #to-center{
     text-align : center;
-    margin-left : 150px;
-    margin-right : 150px;
+    margin-left : 350px;
+    margin-right : 350px;
 }
 button {
     text-align : center;
@@ -12,10 +12,7 @@ button {
 #to-center-btn{
     text-align:center;
 }
-#message{
-    font-size : 25px;
-    color : blue;
-}
+
 #type{
     
     font-size : 28px;
@@ -32,7 +29,6 @@ button {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-  .accountnum {
-      font-size : 25px;
-      color : green;
+  .to-left {
+      float : right;
   }
