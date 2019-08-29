@@ -18,8 +18,7 @@
                             <span><b>iBanking</b></span>
                         </div>
                         <div class="card-body text-secondary">
-                                <div *ngIf="Fa==true ; else else1">
-                                    <div routerLink="userhome"></div>
+                                <div *ngIf="Flag==true ; else else1">
                                     </div>
                                     <ng-template #else1>
                                         <h6>{{Loginstatus}}</h6>

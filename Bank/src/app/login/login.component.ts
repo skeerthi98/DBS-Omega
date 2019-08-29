@@ -9,22 +9,20 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent {
   constructor(public httpLogin:LoginService,private router:Router) {}
-  userid:number;
-    Password:string;
     Loginstatus:string;
-    Fa:boolean;
+    Flag:boolean;
   Login(pUserId:number,pPassword:string)
   {
     if(pUserId==4919931794 && pPassword=="mnbvcxz")
     {
   this.Loginstatus="Login Successful";
   this.httpLogin.Getcustomers();
-this.Fa=true;
+this.Flag=true;
 this.router.navigateByUrl('/userhome');
     }  
     else    
     {
-      this.Fa=false;
+      this.Flag=false;
       if(pUserId!=4919931794 && pPassword!="mnbvcxz")
       {
         this.Loginstatus="Login Unsuccessful due to incorrect UserID and Password. Please enter correct credentials. ";

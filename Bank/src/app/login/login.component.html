@@ -18,13 +18,12 @@
                         <span><b>iBanking</b></span>
                     </div>
                     <div class="card-body text-secondary">
-                            <!-- <div *ngIf="Fa==true ; else else1">
-                              <>
+                             <div *ngIf="Flag==true ; else else1">
                                 </div>
                                 <ng-template #else1>
                                     <h6>{{Loginstatus}}</h6>
                                 </ng-template>
-                                <br> -->
+                                <br> 
                         <form ngNativeValidate>
                         User ID<span><b>*</b></span>&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;<input class="radius1" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" title="Only numbers" name="user" maxlength="10" [(ngModel)]="Userid" required><br><br>
                         Password<span><b>*</b></span>&nbsp;:&nbsp;&nbsp;<input type="password" class="radius1" [(ngModel)]="Password" pattern=".{6,}" title="Enter six or more characters" name="psw" required><br><br>
