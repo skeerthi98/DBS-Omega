@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FundTransferService} from '../fund-transfer.service';
+import {Subscription} from 'rxjs';
+import { Observable} from 'rxjs';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-send-money',
@@ -7,13 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SendMoneyComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpTransfer:FundTransferService) { 
+    
+  }
 
   PaymentType : string;
   OnSelectPaymentType:boolean=false;
   SendersAccountNumber:string="12345";
   ReceiversAccountNumber:string="54321";
-  SendersBalance:number=50000;
+  SendersBalance:number=32000;
   ReceiversBalance:number=40000;
   Money:any;
   Message:string;
@@ -22,10 +28,18 @@ export class SendMoneyComponent implements OnInit {
   Neft:boolean=false;
   Rtgs:boolean=false;
   Upi:boolean=false;
+  details:Account[];
+  update:any;
+  item:any;
+ 
 
   ngOnInit() {
+    this.httpTransfer.GetAccountDetails().subscribe(details => this.details=details);
   }
+  
   TransferType(type:string){
+
+        console.log("method");
 
     if(type=='IMPS')
       this.Imps=true;
@@ -46,6 +60,7 @@ export class SendMoneyComponent implements OnInit {
         if(money != null && money < 200000)
         {
           this.Money=money;
+          //this.httpTransfer.PutBalance().subscribe(update => this.update=update);
           this.UpdateBalance(this.SendersAccountNumber,"send",this.Money);
           this.UpdateBalance(this.ReceiversAccountNumber,"receive",this.Money);
           this.OnTransfer=true;
@@ -118,10 +133,15 @@ export class SendMoneyComponent implements OnInit {
   }
 
   UpdateBalance(accNum:string,mode:string,money:any){
+    
     if(mode == 'send'){
       if(this.SendersBalance >money)
       {
         this.SendersBalance = this.SendersBalance-money;
+        for(this.item in this.details)
+        {
+          this.details[this.item]['balance']= this.SendersBalance;
+        }
         this.Message="Money transfered Sucessfully :)";
       }
       else
