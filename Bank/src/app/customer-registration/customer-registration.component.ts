@@ -11,7 +11,7 @@ export class CustomerRegistrationComponent implements OnInit {
 
   ngOnInit() {
   }
-  Userid:number;
+  UserId:number;
   Password:string;
   MobileStatus:string;
   StrStatus:String;

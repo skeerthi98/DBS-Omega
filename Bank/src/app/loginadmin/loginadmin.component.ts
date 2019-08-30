@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class LoginadminComponent {
   constructor(public httpLogin:LoginService,private router:Router) {}
-  userid:number;
+  UserId:number;
     Password:string;
     Loginstatus:string;
     Flag:boolean;

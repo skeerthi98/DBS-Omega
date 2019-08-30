@@ -117,3 +117,6 @@ button {
 .to-left {
     float : right;
 }
+.warning {
+  text-align: center;
+}

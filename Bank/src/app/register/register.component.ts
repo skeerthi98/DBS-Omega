@@ -7,7 +7,7 @@ import {LoginService} from '../login.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  Registerstatus:string;
+  RegisterStatus:string;
   Flag:boolean;
   constructor(public httpRegister:LoginService) { }
   Register(pDnumber:number,pPin:number,pAnumber:number,pEmail:String,pDate:string,pPassword:String,pRepeatPassword:String)
@@ -16,11 +16,11 @@ export class RegisterComponent {
     {
       if(pPassword==pRepeatPassword){
       this.httpRegister.PostCall(pDnumber,pPin,pAnumber,pEmail,pDate,(Math.floor(Math.random() * 1000000000)),pPassword);
-      this.Registerstatus="Registration Successful";
+      this.RegisterStatus="Registration Successful";
       this.Flag=true;}
       else
       {
-        this.Registerstatus="Registration Not Successful because password and repeat password are not equal. Please enter the same passwords";
+        this.RegisterStatus="Registration Not Successful because password and repeat password are not equal. Please enter the same passwords";
       }
     }
     }

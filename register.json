@@ -1,0 +1,40 @@
+{
+  "Users": [
+    {
+      "ATM/Debit Card Number": "919963814867",
+      "Card PIN": "487",
+      "Aadhar Card Number": "468129412091",
+      "Email Address": "parvathi.kovi@gmail.com",
+      "Date of Birth": "2019-08-15",
+      "id": 601480763,
+"password":"diefifwe"
+    },
+    {
+      "ATM/Debit Card Number": "919963814867",
+      "Card PIN": "178",
+      "Aadhar Card Number": "712789471209",
+      "Email Address": "parvathi.kovi@gmail.com",
+      "Date of Birth": "2019-08-12",
+      "id": 747908209,
+"password":"diefifwe"
+    },
+    {
+      "ATM/Debit Card Number": "919963814867",
+      "Card PIN": "677",
+      "Aadhar Card Number": "878980098765",
+      "Email Address": "parvathi.kovi@gmail.com",
+      "Date of Birth": "2019-08-14",
+      "id": 991285101,
+"password":"diefifwe"
+    },
+    {
+      "ATM/Debit Card Number": "919963814867",
+      "Card PIN": "467",
+      "Aadhar Card Number": "657890098765",
+      "Email Address": "parvathi.kovi@gmail.com",
+      "Date of Birth": "2019-08-12",
+      "id": 563094795,
+"password":"diefifwe"
+    }
+  ]
+}

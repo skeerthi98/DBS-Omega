@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1"><title>
-	  Account Closure Form
+      Account Closure Form
 </title>
 </head>
 <body>
@@ -35,7 +35,7 @@
                         </td>
                     </tr>
 </table>          
-	
+    
       <table width="100%" align="center" border="1" >
            
              
@@ -46,32 +46,59 @@
             </tr>         
             <tr>
                 <td style="width: 20%; text-align: left;">
-                     ACCOUNT TERMINATION DETAILS<span style="color:Red;">*</span>
+                     ACCOUNT NUMBER<span style="color:Red;">*</span>
                 </td>
                 <td style="width: 50%; text-align: left;">
-        <input type="number" id="accNo" name="accountNumber" />
+        <input type="number" id="accNo" name="accountNumber" [(ngModel)]="accNo" (keyup)="accValidator(accNo)" />
                 </td>
             </tr>
-             </table>   
+             </table> 
+             <span *ngIf="isAccValid=='Y'; ">
+                <table width="100%" align="center" border="1" >
+                        <tr>
+                            <td>ACC NUMBER</td>
+                            <td>12345</td>
+                        </tr> 
+                        <tr>
+                                <td>ACC HOLDER NAME</td>
+                                <td>SANGEETHA JOSHI</td>
+                            </tr>
+                            <tr>
+                                    <td>ACC TYPE</td>
+                                    <td>SAVINGS</td>
+                                </tr>        
+
+                </table>
+             </span>  
+             <div ng-if="isAccValid!=true; ">
+                    <span *ngIf="isAccValid=='N';">
+                        <table>
+                            <td>
+                                    <h6 style="color:Red;">Enter valid acc number </h6>
+
+                            </td>
+                        </table>
+                            </span>
+<!-- <h6></h6> -->
+            </div>
              <table width="100%" align="center" border="1" >
            
              
                     <tr>
                         <td class="header" colspan="4">
-                            ACCOUNT DETAILS
+                           DEPOSITING ACCOUNT DETAILS
                         </td>
                     </tr> 
                     <tr>*I / We wish to close the above mentioned account with immediate effect.</tr>        
                     <tr>
                         <td style="width: 30%; text-align: left;">
                                 Please arrange for the credit balance of <span style="color:Red;">*</span>
+                                into the account
                         </td>
-                        <td style="width: 50%; text-align: left;">
+                        <td style="width: 30%; text-align: left;">
                 <input type="number" id="accNo" name="accountNumber" />
                         </td>
-                        <td style="width: 20%; text-align: left;">
-                                from the account to be paid as follows :
-                        </td>
+                        
                     </tr>
                      </table>      
 </div>
@@ -147,8 +174,8 @@
                     SINCE
                     <input name="txtintro_since" type="text" id="txtintro_since" class="onlynumeric" style="width:50px;" />
                     <select name="drpintro_since" id="drpintro_since">
-	<option value="MONTH">MONTH</option>
-	<option value="YEAR">YEAR</option>
+    <option value="MONTH">MONTH</option>
+    <option value="YEAR">YEAR</option>
 
 </select>
                     . HE/SHE IS RESIDING AT THE ADDRESS GIVEN ABOVE.
@@ -160,12 +187,12 @@
                 </td>
                 <td style="width: 30%; text-align: left;">
                     <select name="drp_intro_salutaion" id="drp_intro_salutaion">
-	<option value="">--Select--</option>
-	<option value="MR">MR</option>
-	<option value="MRS">MRS</option>
-	<option value="MS">MS</option>
-	<option value="DR">DR</option>
-	<option value="PROF">PROF</option>
+    <option value="">--Select--</option>
+    <option value="MR">MR</option>
+    <option value="MRS">MRS</option>
+    <option value="MS">MS</option>
+    <option value="DR">DR</option>
+    <option value="PROF">PROF</option>
 </select>
                 </td>
                 <td style="width: 20%; text-align: left;">

@@ -7,17 +7,17 @@ export const headers = new HttpHeaders().set("Access-Control-Allow-Origin", "*")
   providedIn: 'root'
 })
 export class LoginService implements OnDestroy {
-  status:string;
-  response:any;
-  obsObj:Subscription;
-  customers:Customer[];
+  Status:string;
+  Response:any;
+  ObsObj:Subscription;
+  Customers:Customer[];
   constructor(public http: HttpClient) { }
   Getcustomers(){
     const params = new HttpParams();
-    this.obsObj=this.http.get<Customer[]>("http://localhost:3000/customers",{headers,params})
+    this.ObsObj=this.http.get<Customer[]>("http://localhost:3000/customers",{headers,params})
     .subscribe(
-        data => { console.log("Get Request is successful by array ", data);this.customers=data;this.status = "Get Request is successful by array";},
-        error => {console.log("Error", error);this.status = "Error";});
+        data => { console.log("Get Request is successful by array ", data);this.Customers=data;this.Status = "Get Request is successful by array";},
+        error => {console.log("Error", error);this.Status = "Error";});
   }
   PostCall(pDnumber,pPin,pAnumber,pEmail,pDob,count,pPassword){
     this.http.post("http://localhost:3000/Users",
@@ -32,13 +32,13 @@ export class LoginService implements OnDestroy {
 
         })
         .subscribe(
-            data => {console.log("POST Request is successful ", data);this.status = "POST Request is successful";},
-            error => {console.log("Error", error);this.status = "Error";});
+            data => {console.log("POST Request is successful ", data);this.Status = "POST Request is successful";},
+            error => {console.log("Error", error);this.Status = "Error";});
   }  
   
   ngOnDestroy()
   {
-    this.obsObj.unsubscribe();
+    this.ObsObj.unsubscribe();
   }
 }
 class Customer{

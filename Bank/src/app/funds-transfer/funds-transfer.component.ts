@@ -11,6 +11,7 @@ import { isNgTemplate } from '@angular/compiler';
 })
 export class FundsTransferComponent implements OnInit {
 
+
   constructor(private httpTransfer:FundTransferService) { }
   PaymentType : string;
   OnSelectPaymentType:boolean=false;
@@ -25,11 +26,22 @@ export class FundsTransferComponent implements OnInit {
   Neft:boolean=false;
   Rtgs:boolean=false;
   Upi:boolean=false;
-  details:Account[];
-  update:any;
-  item:any;
+  Details:Account[];
+  Update:any;
+  Item:any;
+  Warning : string;
   ngOnInit() {
-    this.httpTransfer.GetAccountDetails().subscribe(details => this.details=details);
+    this.httpTransfer.GetAccountDetails().subscribe(details => this.Details=details);
+    console.log(this.Details);
+    for(this.Item in this.Details)
+        {
+          console.log(this.Details[this.Item]['balance']*1);
+          if((this.Details[this.Item]['balance']*1)<5000)
+          {
+            console.log("warning");
+              this.Warning = "You should maintain a minimum balance of 5000 INR";
+          }
+        }
   }
   TransferType(type:string){
 
@@ -43,11 +55,20 @@ export class FundsTransferComponent implements OnInit {
     this.Upi=true;
   this.PaymentType=type;
   this.OnSelectPaymentType=true;
+  for(this.Item in this.Details)
+        {
+          console.log(this.Details[this.Item]['balance']*1);
+          if((this.Details[this.Item]['balance']*1)<5000)
+          {
+            console.log("warning");
+              this.Warning = "You should maintain a minimum balance of 5000 INR";
+          }
+        }
   }
   TransferMoneyImps(accountNumber:string,confirmAccountNumber:string,ifsc:string,money:any,purpose:string){
     if(accountNumber == confirmAccountNumber)
     {
-      if(ifsc!=null) {
+      if(ifsc!=null && ifsc.length==10) {
 
         if(money != null && money < 200000)
         {
@@ -61,7 +82,7 @@ export class FundsTransferComponent implements OnInit {
           this.Message="You can only transfer upto 2,00,000 using IMPS";
     }
     else
-      this.Message="Please enter IFSC Code";
+      this.Message="Please check IFSC Code";
     }
     else
       this.Message="Please check Benificiary Account Number";
@@ -70,7 +91,7 @@ export class FundsTransferComponent implements OnInit {
   TransferMoneyNeft(accountNumber:string,confirmAccountNumber:string,ifsc:string,money:any,purpose:string){
     if(accountNumber == confirmAccountNumber)
     {
-      if(ifsc != null) {
+      if(ifsc != null && ifsc.length==10) {
       if(money != null  && money < 1000000)
       {
         this.Money=money;
@@ -82,7 +103,7 @@ export class FundsTransferComponent implements OnInit {
         this.Message="You can only transfer upto 10,00,000 using NEFT";
     }
     else
-      this.Message="Please enter IFSC Code";
+      this.Message="Please check IFSC Code";
     }
     else
       this.Message="Please check Benificiary Account Number";
@@ -91,7 +112,7 @@ export class FundsTransferComponent implements OnInit {
   TransferMoneyRtgs(accountNumber:string,confirmAccountNumber:string,ifsc:string,money:any,purpose:string){
     if(accountNumber == confirmAccountNumber)
     {
-      if(ifsc != null) {
+      if(ifsc != null && ifsc.length==10) {
       if(money != null  && money > 200000)
       {
         this.Money=money;
@@ -103,7 +124,7 @@ export class FundsTransferComponent implements OnInit {
         this.Message="You can only transfer a minimum amount of 2,00,000 using RTGS";
     }
     else
-      this.Message="Please enter IFSC Code";
+      this.Message="Please check IFSC Code";
     }
     else
       this.Message="Please check Benificiary Account Number";
@@ -130,9 +151,9 @@ export class FundsTransferComponent implements OnInit {
       if(this.SendersBalance >money)
       {
         this.SendersBalance = this.SendersBalance-money;
-        for(this.item in this.details)
+        for(this.Item in this.Details)
         {
-          this.details[this.item]['balance']= this.SendersBalance;
+          this.Details[this.Item]['balance']= this.SendersBalance;
         }
         this.Message="Money transfered Sucessfully :)";
       }

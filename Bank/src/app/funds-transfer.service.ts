@@ -7,11 +7,11 @@ export const headers = new HttpHeaders().set("Access-Control-Allow-Origin", "*")
   providedIn: 'root'
 })
 export class FundTransferService implements OnDestroy {
-  status:string;
-  response:any;
-  obsObj:Subscription;
-  account:Account[];
-  person : Account;
+  Status:string;
+  Response:any;
+  ObsObj:Subscription;
+  Account:Account[];
+  Person : Account;
   constructor(public http: HttpClient) { }
 
   GetAccountDetails():Observable <any>{
@@ -43,13 +43,13 @@ export class FundTransferService implements OnDestroy {
   
   ngOnDestroy()
   {
-    this.obsObj.unsubscribe();
+    this.ObsObj.unsubscribe();
   }
 }
 class Account{
   accnum : string;
   name : string;
-  balance : string;
+  balance : number;
 }
 
 

@@ -9,7 +9,7 @@ export class CustomerModifyComponent implements OnInit {
 
   constructor() { }
 
-  mobileStatus:String;
+  MobileStatus:String;
   Flag:boolean;
   ngOnInit() {
   }
@@ -21,12 +21,12 @@ export class CustomerModifyComponent implements OnInit {
     console.log("mobile num validator function");
     if(mNo.match(/^[0-9]{10}$/))
     {
-  this.mobileStatus="";
+  this.MobileStatus="";
 this.Flag=true;
     }  
     else    
     { 
-        this.mobileStatus="** Enter valid mobile number";
+        this.MobileStatus="** Enter valid mobile number";
         this.Flag=false;
     }
   }

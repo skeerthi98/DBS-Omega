@@ -105,16 +105,18 @@
         </nav>
     </section>
 <div style="background-color: lightgray">
-    
+   <div class="warning">
+     <b>{{Warning}}</b>
+   </div> 
    <div class="to-left">
      <br>
      <div style="margin-right: 35px">
-       <tr *ngFor="let item of details">
-         <span> Hello <b>{{item.name}}</b></span><br>
-         <span>Account Number : <b>{{item.accnum}}</b></span><br>
-         <span>Your Balance Amount : <b>{{item.balance}}</b> </span>
+       <tr *ngFor="let Item of Details">
+         <span> Hello <b>{{Item.name}}</b></span><br>
+         <span>Account Number : <b>{{Item.accnum}}</b></span><br>
+         <span>Your Balance Amount : <b>{{Item.balance}}</b> </span>
        </tr> 
-   </div>
+   </div> 
   </div>
      <br>
      <div *ngIf="OnSelectPaymentType == false" id="to-center">
@@ -178,19 +180,19 @@
          <br>
           <br>
          <label >Beneficiary Account Number:</label>
-           <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
+           <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="accountNumber" required />
          </div>
          <div class="form-group">
              <label >Confirm Account number:</label>
-             <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required/>
+             <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="confirmAccountNumber" required/>
            </div>
            <div class="form-group">
                <label >IFSC Code:</label>
-               <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required/>
+               <input type="text" value="" class="form-control"  [(ngModel)]="ifsc" required/>
              </div>
          <div class="form-group">
            <label >Amount:</label>
-           <input type="text" value="" class="form-control" [(ngModel)]="money" required />
+           <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57"[(ngModel)]="money" required />
          </div>
          <div class="form-group">
            <label >Purpose:</label>
@@ -213,11 +215,11 @@
          <div class="form-group">
              <br><br>
              <label >Beneficiary Account Number:</label>
-               <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
+               <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="accountNumber" required />
              </div>
              <div class="form-group">
                  <label >Confirm Account number:</label>
-                 <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required />
+                 <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="confirmAccountNumber" required />
                </div>
                <div class="form-group">
                    <label >IFSC Code:</label>
@@ -225,7 +227,7 @@
                  </div>
              <div class="form-group">
                <label >Amount:</label>
-               <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+               <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="money" required/>
              </div>
              <div class="form-group">
                <label >Purpose:</label>
@@ -253,11 +255,11 @@
            <br>
     <br>
            <label >Beneficiary Account Number:</label>
-             <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required/>
+             <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="accountNumber" required/>
            </div>
            <div class="form-group">
                <label >Confirm Account number:</label>
-               <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required/>
+               <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="confirmAccountNumber" required/>
              </div>
              <div class="form-group">
                  <label >IFSC Code:</label>
@@ -265,7 +267,7 @@
                </div>
            <div class="form-group">
              <label >Amount:</label>
-             <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+             <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="money" required/>
            </div>
            <div class="form-group">
              <label >Purpose:</label>
@@ -294,7 +296,8 @@
      </div>
      <div class="form-group">
        <label >Amount:</label>
-       <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+       <input type="text" value="" class="form-control" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+       [(ngModel)]="money" required/>
      </div>
      <button type="submit" class="btn btn-primary"  (click)="TransferMoneyUpi(upiId,money)">Transfer</button>
      <br><br>
