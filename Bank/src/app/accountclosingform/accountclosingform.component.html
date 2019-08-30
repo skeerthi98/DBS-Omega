@@ -1,1 +1,232 @@
-<p>accountclosingform works!</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	  Account Closure Form
+</title>
+</head>
+<body>
+    <form name="form1" method="post" action="SBAcct.aspx" id="form1" enctype="multipart/form-data">
+
+
+    <div>
+   
+       
+        <table width="100%" align="center" border="1">
+                <tr>
+                        <td align="center" style="width: 20%;">
+                            <input type="hidden" name="hdnrefnum" id="hdnrefnum" value="SB20190824040808864" />
+                            <img id="Image1" src="../../assets/logo.png" style="height:89px;width:230px;" />
+                        </td>
+                        <td style="text-align: center; font-size: 30px;color:white; background-color: maroon;">
+                            ACCOUNT CLOSURE FORM
+                        </td>
+                    </tr>
+        </table>
+        <table width="100%"  border="1">
+                <tr>
+                        <td align="right">
+                                <label for="start">Date:</label>
+
+                                <input type="date" id="closeDate" name="closing-date"
+                                       value="2019-08-22"
+                                       min="2019-08-22" max="2020-08-22"
+                                       required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}">
+                                
+                        </td>
+                    </tr>
+</table>          
+	
+      <table width="100%" align="center" border="1" >
+           
+             
+            <tr>
+                <td class="header" colspan="4">
+                    ACCOUNT DETAILS
+                </td>
+            </tr>         
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                     ACCOUNT TERMINATION DETAILS<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 50%; text-align: left;">
+        <input type="number" id="accNo" name="accountNumber" />
+                </td>
+            </tr>
+             </table>   
+             <table width="100%" align="center" border="1" >
+           
+             
+                    <tr>
+                        <td class="header" colspan="4">
+                            ACCOUNT DETAILS
+                        </td>
+                    </tr> 
+                    <tr>*I / We wish to close the above mentioned account with immediate effect.</tr>        
+                    <tr>
+                        <td style="width: 30%; text-align: left;">
+                                Please arrange for the credit balance of <span style="color:Red;">*</span>
+                        </td>
+                        <td style="width: 50%; text-align: left;">
+                <input type="number" id="accNo" name="accountNumber" />
+                        </td>
+                        <td style="width: 20%; text-align: left;">
+                                from the account to be paid as follows :
+                        </td>
+                    </tr>
+                     </table>      
+</div>
+            <table width="100%" align="center" border="1" >
+            <tr>
+                <td class="header " colspan="4">
+                    VERIFICATION
+                </td>
+            </tr>
+            <tr>
+                    <td  width="70%"> 
+                        REASON FOR CLOSING ACCOUNT
+                    </td>
+                    <td width="100%"> 
+                            <select name="cloingReason" id="closing-reason">
+                                    <option value="MONTH">------- PLEASE SELECT THE REASON FOR CLOSING YOUR ACCOUNT -------</option>
+                                    <option value="YEAR">   I AM NOT SATISFIED WITH THE SERVICES PROVIDED BY BANK</option>
+                                    <option value="YEAR">   SLOW REQUEST SERVICING</option>
+                                    <option value="YEAR">   UNPROFESSIONAL STAFF / RUDE BEHAVIOR OF STAFF</option>
+                                    <option value="YEAR">  I AM MORE IMPRESSED BY OTHER BANK</option>
+                                </select>
+                        </td>
+                        
+                </tr>
+                <tr>
+                        <td style="text-align: left;" colspan="4">
+                            <tr>Specify if any other reason for closing account with us ***(Optional)</tr>
+                          
+                               <input type="text" style="height: 50px;width: 98%; margin: 5px " maxlength="50"  class="onlytext"/>
+                           
+                            </td>
+                </tr>
+                <tr>
+                        <td style="text-align: left;" colspan="4">
+                            I/We understand that a booklet on the Banking Codes & Standards Board of India Code(BCSBI) posted 
+                            on your website shall be provided to me on demand. I/We confirm having received,read and understood 
+                            (a) the accounts rules and hereby agree to be bound by the terms & conditions outlined
+                            in these rules which governs the account(s) which I/We am/are opening/will open and 
+                            (b) amendment to the rules made from time to time and those relating to various services availed by
+                            me/us when displayed by the Bank on its notice board or on its website and those relating to various services offered
+                            by Bank including but not limited to debit card,credit card,internet banking,mobile banking and other facilities listed in the form.
+                            The usage of these facilities is govenrned by the terms and conditions stipulated by the Bank from time to time.
+                        </td>
+                    </tr> 
+                <tr>
+                        <td style="text-align: left;" colspan="4">
+                            <input id="chkterm" type="checkbox" name="chkterm" /><label for="chkterm">I AGREE TO THE TERMS AND CONDITIONS</label><span style="color:Red;">*</span>
+                        </td>
+                    </tr>
+            <tr>
+                <td style="text-align: left;" colspan="4">
+                  Date :<span id="lblcust_veri_date">24-Aug-2019</span>
+                   &nbsp;&nbsp;Place<span style="color:Red;">*</span> :<input name="txtcust_veri_place" type="text" maxlength="50" id="txtcust_veri_place" class="onlytext" />
+                </td>
+            </tr>   
+            
+        
+            <tr>
+                <td class="header" colspan="4">
+                    INTRODUCTION BY EXISTING DBS BANK CUSTOMER(OPTIONAL)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;" colspan="4">
+                    I/WE CONFIRM THAT I AM/WE ARE AN ACCOUNT HOLDER WITH DBS BANK FOR OVER 6 MONTHS.I/WE
+                    CERTIFY THAT I/WE HAVE KNOWN
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;" colspan="4">
+                    MR/MRS
+                    &nbsp;<b><span id="lblname"></span></b>&nbsp;
+                    SINCE
+                    <input name="txtintro_since" type="text" id="txtintro_since" class="onlynumeric" style="width:50px;" />
+                    <select name="drpintro_since" id="drpintro_since">
+	<option value="MONTH">MONTH</option>
+	<option value="YEAR">YEAR</option>
+
+</select>
+                    . HE/SHE IS RESIDING AT THE ADDRESS GIVEN ABOVE.
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    SALUTATION
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <select name="drp_intro_salutaion" id="drp_intro_salutaion">
+	<option value="">--Select--</option>
+	<option value="MR">MR</option>
+	<option value="MRS">MRS</option>
+	<option value="MS">MS</option>
+	<option value="DR">DR</option>
+	<option value="PROF">PROF</option>
+</select>
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    NAME
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txt_intro_name" type="text" maxlength="40" id="txt_intro_name" class="onlytext" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    ACCOUNT NUMBER
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txt_intro_acct" type="text" maxlength="15" id="txt_intro_acct" class="onlynumeric" />
+                </td>
+              </table>
+ 
+
+<table>
+
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    ISSUE DATE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_issue_dt" type="text" id="txtid_issue_dt" />
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    EXPIRY DATE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_expire_dt" type="text" id="txtid_expire_dt" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    ISSUE PLACE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_issue_place" type="text" maxlength="25" id="txtid_issue_place" />
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    ISSUED BY <span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_issued_by" type="text" maxlength="25" id="txtid_issued_by" />
+                </td>
+            </tr>
+            <tr>
+</table>
+              
+  <div>           
+              <table width="100%" align="center" border="1">
+            <tr>
+                <td style="text-align: center;" colspan="4">
+                    <input type="submit" name="btnsubmit" value="S U B M I T" id="btnsubmit" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+</body>
+</html>
