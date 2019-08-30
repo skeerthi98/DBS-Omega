@@ -1,1 +1,595 @@
-<p>accountopeningform works!</p>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	 DBS Omega Online Savings Account
+</title>
+</head>
+<body>
+
+<form ngNativeValidate name="form1" id="form1"  enctype="multipart/form-data">
+
+<div>
+
+        <table width="100%" align="center" border="1">
+        
+            <tr>
+                <td align="center" style="width: 20%;">
+                    <img id="Image1" src="../../assets/logo.png" style="height:89px;width:230px;" />
+                </td>
+                <td style="text-align: center; font-size: 30px;color:white; background-color: maroon;" colspan="3">
+                    ACCOUNT OPENING FORM
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    &nbsp;
+                </td>
+            </tr>
+          
+             </table>
+        <div id="UpdatePanel1">
+	
+      <table width="100%" align="center" border="1" >
+            <tr>
+                <td class="header" colspan="4">
+                    ACCOUNT DETAILS
+                </td>
+            </tr>         
+            <tr>
+                <td style="width: 50%; text-align: left;">
+                    TYPE OF ACCOUNT<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 50%; text-align: left;">
+                    <select name="drp_type_ac" id="drp_type_ac">
+		<option value="">------SELECT THE TYPE OF ACCOUNT------</option>
+		<option value="1">SAVINGS</option>
+		<option value="2">CURRENT</option>
+		<option value="3">SALARY</option>
+	</select>
+                </td>
+            </tr>
+            <tr>
+                    <td >
+                       ASSOCIATED MOBILE NUMBER <span style="color:Red;">*</span> </td>
+                    <td >(+91)
+                        <input name="txtmobno" type="text" [(ngModel)]="mobileNo" (keyup)="MySubmit(mobileNo)" maxlength="10" id="txtmobno" class="onlynumeric" />
+                                
+                        <span *ngIf="mbS==false ; ">
+                                <h6 style="color:Red;">{{mobileStatus}} </h6>
+                                </span>
+                                
+                    </td>
+                    <td >
+                        EMAIL<span style="color:Red;">*</span>
+                    </td>
+                    <td >
+                        <input name="txtemail" type="text" maxlength="50" id="txtemail" />
+                    </td>
+                </tr>
+             </table>      
+</div>
+            <table width="100%" align="center" border="1" > 
+            <tr>
+                <td class="header" colspan="4">
+                 EXISTING DBS BANK CUSTOMER(OPTIONAL)
+                </td>
+            </tr>
+            
+            <tr>
+                    <td style="width: 20%; text-align: left;">
+                            ACCOUNT NUMBER
+                        </td>
+                <td style="width: 30%; text-align: left;">
+                        <input name="txt_intro_acct" type="text" maxlength="15" id="txt_intro_acct" class="onlynumeric" />
+ 
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    NAME
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txt_intro_name" type="text" maxlength="40" id="txt_intro_name" class="onlytext" />
+                </td>
+            </tr>
+            <tr>
+                <td class="header" colspan="4">
+                    PAN/GIR DETAILS
+                </td>
+            </tr>
+            <tr>
+                <td style=" text-align: left;">
+                    PAN/GIR NUMBER
+                </td>
+                <td style=" text-align: left;">
+                    <input name="txtpan" type="text" maxlength="10" id="txtpan" />
+                </td>
+            </tr>
+            <tr>
+                <td class="header" colspan="4">
+                    NOMINATION
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 30%; text-align: left;">
+                    NOMINATION FACILITY
+                </td>
+            <td style=" text-align: left;">
+                    <table id="rdonom" border="0">
+	          <tr>
+                 <div class="radio">  
+                    <label for="rdonom_0">  
+                        <input type="radio" id="rdonom_0" name="rdonom" value="Y" (click)="setradio('Y')" [checked]='true' ngModel>  
+                        REQUIRED  
+                    </label>  
+                </div>  
+                <div class="radio">  
+                    <label for="rdonom_1">  
+                        <input type="radio" id="rdonom_1" name="rdonom" value="N" (click)="setradio('N')" ngModel>  
+                        NOT REQUIRED  
+                    </label>  
+                </div> 
+
+    </tr>
+</table>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan="4">
+                    
+<span *ngIf="nomS==true; ">
+                    <table id="tblnom" width="100%" align="center" border="1">
+	<tr>
+		<td style="text-align: left;" colspan="4">
+                                NOMINATION (FILL FORM DA-1) NOMINATION UNDER SEC. 45ZA OF THE BANKING REGULATION
+                                ACT, 1949 AND RULE 2(1) OF THE BANKING COMPANIES (NOMINATION) RULES 1985 IN RESPECT
+                                OF BANK DEPOSIT.<br> I/we nominate the following person to whom in the event of
+                                my/our/minor&#39;s death the amount deposit in the above account may be returned
+                                by the DBS Bank Branch.
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                NAME
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtnom_name" type="text" maxlength="40" id="txtnom_name" class="onlytext" />
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                ADDRESS 1
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtnom_addr1" type="text" maxlength="45" id="txtnom_addr1" />
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                ADDRESS2
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtnom_addr2" type="text" maxlength="45" id="txtnom_addr2" />
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                CITY</td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtnom_city" type="text" maxlength="30" id="txtnom_city" class="onlytext" />
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                STATE</td>
+		<td style="width: 30%; text-align: left;">
+                                <select name="drpnom_state" id="drpnom_state">
+			<option value="">--Select--</option>
+			<option value="AP">ANDHRA PRADESH</option>
+			<option value="AS">ASSAM</option>
+			<option value="BH">BIHAR</option>
+			<option value="CG">CHHATISGARH</option>
+			<option value="CH">CHANDIGARH</option>
+			<option value="DL">DELHI</option>
+			<option value="DN">DADRA - NAGAR HAVELI</option>
+			<option value="GJ">GUJARAT</option>
+			<option value="GO">GOA</option>
+			<option value="HP">HIMACHAL PRADESH</option>
+			<option value="HR">HARYANA</option>
+			<option value="JD">JHARKHAND</option>
+			<option value="JK">JAMMU - KASHMIR</option>
+			<option value="KA">KARNATAKA</option>
+			<option value="KE">KERALA</option>
+			<option value="ME">MEGHALAYA</option>
+			<option value="MH">MAHARASHTRA</option>
+			<option value="MP">MADHYA PRADESH</option>
+			<option value="OR">ODISHA</option>
+			<option value="PB">PUNJAB</option>
+			<option value="PN">PONDICHERRY</option>
+			<option value="RJ">RAJASTHAN</option>
+			<option value="SK">SIKKIM</option>
+			<option value="TG">TELANGANA</option>
+			<option value="TN">TAMIL NADU</option>
+			<option value="TP">TRIPURA</option>
+			<option value="UL">UTTARANCHAL</option>
+			<option value="UP">UTTAR PRADESH</option>
+			<option value="WB">WEST BENGAL</option>
+
+		</select>
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                PIN CODE
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtnom_pin" type="text" maxlength="6" id="txtnom_pin" class="onlynumeric" />
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                RELATION
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <select name="drpnom_rel" id="drpnom_rel">
+			<option value="">--Select--</option>
+			<option value="BRO">BROTHER</option>
+			<option value="DTR">DAUGHTER</option>
+			<option value="FAT">FATHER</option>
+			<option value="GUARD">GUARDIAN</option>
+			<option value="HUS">HUSBAND</option>
+			<option value="MOT">MOTHER</option>
+			<option value="OTH">OTHERS</option>
+			<option value="SIS">SISTER</option>
+			<option value="SON">SON</option>
+			<option value="WIF">WIFE</option>
+
+		</select>
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                DATE OF BIRTH</td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtnom_dob" type="text" id="txtnom_dob" class="datetimenominee" />
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                &nbsp;MINOR</td>
+		<td style="width: 30%; text-align: left;">
+                                <table id="rdo_nom_minor" border="0">
+			<tr>
+				<td><input id="rdo_nom_minor_0" type="radio" name="rdo_nom_minor" value="Y" /><label for="rdo_nom_minor_0">YES</label></td><td><input id="rdo_nom_minor_1" type="radio" name="rdo_nom_minor" value="N" checked="checked" /><label for="rdo_nom_minor_1">NO</label></td>
+			</tr>
+		</table>
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                &nbsp;</td>
+		<td style="width: 30%; text-align: left;">
+                                &nbsp;</td>
+	</tr>
+	<tr>
+		<td style="text-align: left;" colspan="4">
+                                As the nominee is minor on this date, I/we appoint Mr/Ms
+                                <input name="txtguard_name" type="text" maxlength="40" id="txtguard_name" class="onlytext" style="width:200px;" />
+                                to receive the amount of the deposit on behalf of the nominee<br />
+                                in the event of my/our/minor&#39;s death during the minority of the nominee.
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                ADDRESS1
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtguard_addr1" type="text" maxlength="45" id="txtguard_addr1" />
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                ADDRESS2
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtguard_addr2" type="text" maxlength="30" id="txtguard_addr2" />
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                CITY</td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtguard_city" type="text" id="txtguard_city" class="onlytext" />
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                                STATE</td>
+		<td style="width: 30%; text-align: left;">
+                                <select name="drpguard_state" id="drpguard_state">
+			<option value="">--Select--</option>
+			<option value="AP">ANDHRA PRADESH</option>
+			<option value="AS">ASSAM</option>
+			<option value="BH">BIHAR</option>
+			<option value="CG">CHHATISGARH</option>
+			<option value="CH">CHANDIGARH</option>
+			<option value="DL">DELHI</option>
+			<option value="DN">DADRA - NAGAR HAVELI</option>
+			<option value="GJ">GUJARAT</option>
+			<option value="GO">GOA</option>
+			<option value="HP">HIMACHAL PRADESH</option>
+			<option value="HR">HARYANA</option>
+			<option value="JD">JHARKHAND</option>
+			<option value="JK">JAMMU - KASHMIR</option>
+			<option value="KA">KARNATAKA</option>
+			<option value="KE">KERALA</option>
+			<option value="ME">MEGHALAYA</option>
+			<option value="MH">MAHARASHTRA</option>
+			<option value="MP">MADHYA PRADESH</option>
+			<option value="OR">ODISHA</option>
+			<option value="PB">PUNJAB</option>
+			<option value="PN">PONDICHERRY</option>
+			<option value="RJ">RAJASTHAN</option>
+			<option value="SK">SIKKIM</option>
+			<option value="TG">TELANGANA</option>
+			<option value="TN">TAMIL NADU</option>
+			<option value="TP">TRIPURA</option>
+			<option value="UL">UTTARANCHAL</option>
+			<option value="UP">UTTAR PRADESH</option>
+			<option value="WB">WEST BENGAL</option>
+
+		</select>
+                            </td>
+	</tr>
+	<tr>
+		<td style="width: 20%; text-align: left;">
+                                PIN CODE
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                                <input name="txtguard_pin" type="text" maxlength="6" id="txtguard_pin" class="onlynumeric" />
+                            </td>
+		<td style="width: 20%; text-align: left;">
+                            </td>
+		<td style="width: 30%; text-align: left;">
+                            </td>
+	</tr>
+</table>
+</span>
+
+                </td>
+            </tr>
+            <tr>
+                <td class="header" colspan="4">
+                    CUSTOMER PROFILE
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                  ID TYPE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                 <select name="drpidtype" id="drpidtype">
+	<option value="">--Select--</option>
+	<option value="H">AADHAAR CARD</option>
+
+</select>
+                  
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    PID NUMBER <span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                     <input name="txtidno" type="text" maxlength="15" id="txtidno" />
+                 
+                  
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    ISSUE DATE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_issue_dt" type="text" id="txtid_issue_dt" />
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    EXPIRY DATE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_expire_dt" type="text" id="txtid_expire_dt" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    ISSUE PLACE<span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_issue_place" type="text" maxlength="25" id="txtid_issue_place" />
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    ISSUED BY <span style="color:Red;">*</span>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input name="txtid_issued_by" type="text" maxlength="25" id="txtid_issued_by" />
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;" >
+                    OCCUPATION
+                </td>
+                <td style="text-align: left;" >
+                    <select name="drpoccupation" id="drpoccupation">
+	<option value="">--Select--</option>
+	<option value="BUS">BUSINESS</option>
+	<option value="DOC">DOCTOR</option>
+	<option value="ENG">ENGINEER</option>
+	<option value="EXSER">EX-SERVICE MAN</option>
+	<option value="GOS">GOVT SERVANT</option>
+	<option value="HOW">HOUSE WIFE</option>
+	<option value="OTH">OTHERS</option>
+	<option value="PRF">PROFESSOR/ LECTURER</option>
+	<option value="PRO">PROFFESSIONAL</option>
+	<option value="STU">STUDENT</option>
+
+</select>
+                </td>
+                <td style="text-align: left;" >
+                    INCOME
+                </td>
+                <td style="text-align: left;" >
+                    <select name="drpincome" id="drpincome">
+	<option value="">--Select--</option>
+	<option value="BEL1">UPTO 1 LAC</option>
+	<option value="BEL5">RS. 1 LAC TO 5 LAC</option>
+	<option value="MOR5">MORE THAN 5 LAC</option>
+
+</select>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    COMMUNITY
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <select name="drpcommunity" id="drpcommunity">
+	<option value="">--Select--</option>
+	<option value="BUDHI">BUDDHISTS</option>
+	<option value="CHRIS">CHRISTIAN</option>
+	<option value="HINDU">HINDU</option>
+	<option value="JAINS">JAINS</option>
+	<option value="MUSLI">MUSLIM</option>
+	<option value="OTHER">OTHER COMMUNITIES</option>
+	<option value="PARSI">PARSIS</option>
+	<option value="SIKHS">SIKH</option>
+	<option value="SINDH">SINDHIS</option>
+	<option value="ZORAS">ZOROSTRAINS</option>
+
+</select>
+                </td>
+                <td style="width: 20%; text-align: left;">
+                    CATEGORY
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <select name="drpcateg" id="drpcateg">
+	<option value="">--Select--</option>
+	<option value="GEN">GENERAL</option>
+	<option value="NA">NOT APPLICABLE</option>
+	<option value="OBC">OTHER BACKWARD CLASSES</option>
+	<option value="SC">SCHEDULE CASTE</option>
+	<option value="ST">SCHEDULE TRIBE</option>
+
+</select>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    EDUCATIONAL QUALIFICATION
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <select name="drpeducation" id="drpeducation">
+	<option value="">--Select--</option>
+	<option value="GR">GRADUATE</option>
+	<option value="OTH">OTHERS</option>
+	<option value="PG">POST GRADUATE</option>
+	<option value="UG">UNDER GRADUATE</option>
+
+</select>
+                </td>
+                <td style="width: 20%; text-align: left;">
+                </td>
+                <td style="width: 30%; text-align: left;">
+                </td>
+            </tr>
+             <tr>
+                <td class="header" colspan="4">
+                    ADDITIONAL INFORMATION
+                </td>
+            </tr>
+             <tr>
+                <td style="width: 20%; text-align: left;">
+                    REQUEST FOR ADD-ON</td>
+                <td style="text-align: left;" colspan="3">
+                    <table id="chkaddon" border="0">
+	<tr>
+        <td><input id="chkaddon_0" type="checkbox" name="chkaddon$0" />
+            <label for="chkaddon_0">E-Statement of Account</label></td>
+                <td><input id="chkaddon_2" type="checkbox" name="chkaddon$2" />
+                    <label for="chkaddon_2">Mobile Banking</label></td>
+                    <td><input id="chkaddon_3" type="checkbox" name="chkaddon$3" />
+                        <label for="chkaddon_3">Internet Banking</label></td>
+	</tr>
+</table>
+                </td>
+            </tr>
+    
+            <tr>
+                <td class="header" colspan="4">
+                    DOCUMENTS TO BE SUBMITTED
+                </td>
+            </tr>
+            </table>
+       
+         
+       
+               <table width="100%" align="center" border="1">
+            <tr>
+                <td style="text-align: left;" colspan="3">
+                    Please attach&nbsp; identity proof ,address proof and recent photograph and originals
+                    thereof will have to be produced for verification.
+                </td>
+            </tr>
+                   
+                   <tr>
+                <td style="width: 20%; text-align: left;">
+                    PASSPORT SIZE PHOTOGRAPH <span style="color:Red;">*</span>
+                </td>
+            
+                <td style="width: 30%; text-align: left;">
+                    <input type="file" name="upld_photo" id="upld_photo" [(ngModel)]="pPhoto" >&nbsp;&nbsp;
+                        <br>
+                         (Only JPG,BMP and PNG file types are allowed with maximum size of 100KB)
+                </td>
+                
+                <!-- <td style="text-align: center;">
+                    <img id="imgphoto" src="pPhoto" style="height:150px;width:150px;border-width:0px;" /> 
+                </td> -->
+                
+            </tr>
+            <tr>
+                <td style="width: 20%; text-align: left;">
+                    PROOF OF IDENTITY <span style="color:Red;">*</span>
+                </td>
+                <td style="text-align: left;">
+                    <select name="drp_proof_of_identity" id="drp_proof_of_identity">
+	<option value="">--Select--</option>
+	<option value="H">AADHAAR CARD</option>
+
+</select>
+                </td>
+                <td style="width: 30%; text-align: left;">
+                    <input type="file" name="upld_idproof" id="upld_idproof" >
+                    <br>
+                    (Only PDF,PNG and JPG file types are allowed with maximum size of 500KB)
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left;" >
+                    PROOF OF ADDRESS <span style="color:Red;">*</span>
+                </td>
+                <td style="text-align: left;" >
+                    <select name="drp_proof_of_address" id="drp_proof_of_address">
+	<option value="">--Select--</option>
+	<option value="H">AADHAAR CARD</option>
+
+</select>
+                </td>
+                <td style="text-align: left;" >
+                    <input type="file" name="upld_addrproof" id="upld_addrproof" />
+                    <br>
+                     (Only PDF,PNG and JPG file types are allowed with maximum size of 500KB)
+                </td>
+            </tr>        
+            <tr>
+                <td class="header" colspan="3">
+                </td>
+            </tr>
+           </table>         
+              <table width="100%" align="center" border="1">
+            <tr>
+                <td style="text-align: center;" colspan="4">
+                    <input type="submit" name="btnsubmit" value="S U B M I T" id="btnsubmit" />
+                </td>
+            </tr>
+        </table>
+    </div>
+</form>
+
+</body>
+</html>

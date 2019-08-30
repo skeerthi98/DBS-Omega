@@ -18,6 +18,7 @@ import { AccountclosingformComponent } from './accountclosingform/accountclosing
 import { FundsTransferComponent } from './funds-transfer/funds-transfer.component';
 import { CustomerModifyComponent } from './customer-modify/customer-modify.component';
 import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
+import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
     AccountclosingformComponent,
     FundsTransferComponent,
     CustomerModifyComponent,
-    CustomerRegistrationComponent
+    CustomerRegistrationComponent,
+    CustomerDeleteComponent
   ],
   imports: [
     BrowserModule,

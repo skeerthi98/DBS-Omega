@@ -1,0 +1,47 @@
+
+.header
+{
+	text-align: left;
+	background-color: darkred;
+	height: 20px;
+	color: White;
+	font-weight: bold;
+}
+option:checked,option:hover { 
+    background-color:darkred;
+    color:#000;
+}
+
+select:active {
+    outline-color: red
+  }
+
+
+.headerAck
+{
+	text-align: center;
+	font-size: 25px;
+	background-color: darkred;;
+	height: 20px;
+	color: White;
+	font-weight: bold;
+}
+input{
+    outline-color: maroon;
+}
+body
+{
+	font-family: Verdana;
+	font-size: 12px;
+/*	border-width: 1px 1px 1px 1px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-style: solid;
+	border-color: Black; */
+	background-color: rgb(240, 231, 231);
+	width: 80%;
+	text-align:left;
+   	margin-left:10%;
+	
+	}
+

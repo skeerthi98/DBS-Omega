@@ -17,7 +17,9 @@ export class CustomerRegistrationComponent implements OnInit {
   StrStatus:String;
   Flag:boolean;
 
-
+  Register(){
+    document.getElementById("created").style.display="block"; 
+  }
 MySubmit(mNo:number)
 {
   console.log("mobile num validator function");

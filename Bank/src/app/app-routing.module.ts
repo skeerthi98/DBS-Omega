@@ -16,6 +16,7 @@ import { AccountopeningformComponent } from './accountopeningform/accountopening
 import {FundsTransferComponent} from './funds-transfer/funds-transfer.component';
 import {CustomerModifyComponent} from './customer-modify/customer-modify.component';
 import {CustomerRegistrationComponent} from './customer-registration/customer-registration.component';
+import { CustomerDeleteComponent } from './customer-delete/customer-delete.component';
 export const routes:Routes = [
    {path:'',redirectTo:'home',pathMatch:'full'},
  {path:"login",component:LoginComponent},
@@ -27,10 +28,11 @@ export const routes:Routes = [
 {path:"loginadmin",component:LoginadminComponent},
 {path:"adminhome",component:AdminhomeComponent},
 {path:"accountopeninghome",component:AccountopeninghomeComponent},
-{path:"accountopeninghome",component:AccountopeningformComponent},
+{path:"accountopeningform",component:AccountopeningformComponent},
 {path:"fundstransfer",component:FundsTransferComponent},
 {path:"customermodify",component:CustomerModifyComponent},
 {path:"customerregister",component:CustomerRegistrationComponent},
+{path:"customerdelete",component:CustomerDeleteComponent},
  {path:"**",component:HomeComponent}
 ];
 

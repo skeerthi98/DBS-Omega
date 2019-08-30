@@ -17,7 +17,7 @@ export class FundTransferService implements OnDestroy {
   GetAccountDetails():Observable <any>{
     console.log("acc");
     const params = new HttpParams();
-    return this.http.get<Account[]>("http://localhost:3000/details",{headers,params});
+    return this.http.get<Account[]>("http://localhost:3100/details",{headers,params});
   }
 
   // PutBalance(){
@@ -27,7 +27,7 @@ export class FundTransferService implements OnDestroy {
   // }
 
   PutBalance():Observable<any>{
-    return this.http.put("http://localhost:3000/details", {
+    return this.http.put("http://localhost:3100/details", {
       "id" : "2",
       "accnum" : "1234",
       "name" : "Anya",
@@ -51,3 +51,8 @@ class Account{
   name : string;
   balance : string;
 }
+
+
+
+
+  

@@ -1,4 +1,33 @@
+.header
+{
+	text-align: left;
+	background-color: darkred;
+	height: 20px;
+	color: White;
+	font-weight: bold;
+}
+option:checked,option:hover { 
+    background-color:darkred;
+    color:#000;
+}
 
+select:active {
+    outline-color: red
+  }
+
+
+.headerAck
+{
+	text-align: center;
+	font-size: 25px;
+	background-color: darkred;;
+	height: 20px;
+	color: White;
+	font-weight: bold;
+}
+input{
+    outline-color: maroon;
+}
 .dropdown-submenu {
     position: relative;
   }
@@ -76,44 +105,21 @@
 {
   background-color:darkred;
 } 
-#to-center{
-  text-align : center;
-  margin-left : 350px;
-  margin-right : 350px;
-}
-button {
-  text-align : center;
-  background-color :  #EA1c2c;
-  color : white;
-  border-radius: 5px;
-}
-#to-center-btn{
-  text-align:center;
-}
-/* #message{
-  font-size : 25px;
-  color : blue;
-} */
-#type{
-  
-  font-size : 28px;
-  background-color : #EA1c2c;
-  color:white;
-}
 
-.card {
-  width : 200px;
-  height : 200px;
-}
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-/* .accountnum {
-    font-size : 25px;
-    color : green;
-} */
-.to-left {
-    float : right;
-}
+body
+{
+	font-family: Verdana;
+	font-size: 12px;
+/*	border-width: 1px 1px 1px 1px;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border-style: solid;
+	border-color: Black; */
+	background-color: rgb(240, 231, 231);
+	width: 80%;
+    text-align:left;
+    margin-top: 10%;
+   	margin-left:10%;
+	
+	}

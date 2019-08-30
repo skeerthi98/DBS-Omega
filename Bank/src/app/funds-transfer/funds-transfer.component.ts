@@ -14,8 +14,8 @@ export class FundsTransferComponent implements OnInit {
   constructor(private httpTransfer:FundTransferService) { }
   PaymentType : string;
   OnSelectPaymentType:boolean=false;
-  SendersAccountNumber:string="228493248114";
-  ReceiversAccountNumber:string="543212782382";
+  SendersAccountNumber:string="248329479128";
+  ReceiversAccountNumber:string="543210928956";
   SendersBalance:number=32000;
   ReceiversBalance:number=40000;
   Money:any;
@@ -34,16 +34,39 @@ export class FundsTransferComponent implements OnInit {
   TransferType(type:string){
 
     if(type=='IMPS')
-      this.Imps=true;
-    if(type=='RTGS')
-      this.Rtgs=true;
-    if(type=='NEFT')
-      this.Neft=true;
-    if(type=='UPI')
-      this.Upi=true;
-    this.PaymentType=type;
-    this.OnSelectPaymentType=true;
+    this.Imps=true;
+  if(type=='RTGS')
+    this.Rtgs=true;
+  if(type=='NEFT')
+    this.Neft=true;
+  if(type=='UPI')
+    this.Upi=true;
+  this.PaymentType=type;
+  this.OnSelectPaymentType=true;
   }
+  TransferMoneyImps(accountNumber:string,confirmAccountNumber:string,ifsc:string,money:any,purpose:string){
+    if(accountNumber == confirmAccountNumber)
+    {
+      if(ifsc!=null) {
+
+        if(money != null && money < 200000)
+        {
+          this.Money=money;
+          //this.httpTransfer.PutBalance().subscribe(update => this.update=update);
+          this.UpdateBalance(this.SendersAccountNumber,"send",this.Money);
+          this.UpdateBalance(this.ReceiversAccountNumber,"receive",this.Money);
+          this.OnTransfer=true;
+        }
+        else
+          this.Message="You can only transfer upto 2,00,000 using IMPS";
+    }
+    else
+      this.Message="Please enter IFSC Code";
+    }
+    else
+      this.Message="Please check Benificiary Account Number";
+  }
+
   TransferMoneyNeft(accountNumber:string,confirmAccountNumber:string,ifsc:string,money:any,purpose:string){
     if(accountNumber == confirmAccountNumber)
     {

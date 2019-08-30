@@ -53,7 +53,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="customerregister">Register a Customer</a>
                             <a class="dropdown-item" href="customermodify">Modify Customer Details</a>
-                            <a class="dropdown-item" >Delete a Customer</a>
+                            <a class="dropdown-item" href="customerdelete">Delete a Customer</a>
                         </div>
                     </ul>        
             </ul>
@@ -62,14 +62,17 @@
 
 <body>
 
-        <form ngNativeValidate name="form1" id="form1" style="margin-top: -50px" enctype="multipart/form-data">        
-        <div>
-        
+        <form ngNativeValidate ngForm #form="ngForm" style="margin-top: -50px" enctype="multipart/form-data">        
+            <div>
+    
                 <table width="100%" align="center" border="1">
                 
                     <tr>
-                        <td style="text-align: center; font-size: 30px;color:white; background-color: maroon;" colspan="4">
-                            Customer Registration
+                        <td align="center" style="width: 20%;">
+                            <img id="Image1" src="../../assets/logo.png" style="height:89px;width:230px;" />
+                        </td>
+                        <td style="text-align: center; font-size: 30px;color:white; background-color: maroon;" colspan="3">
+                            Customer Creation
                         </td>
                     </tr>
                     <tr>
@@ -79,16 +82,20 @@
                     </tr>
                  
                     <tr>
-                        <td class="header"  style="color: white;background-color: maroon" colspan="4">
+                        <td class="header" colspan="4">
                             PERSONAL DETAILS
                         </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 20%" > Customer Id: </td>
+                        <td> <input required name="c_id" type="number" id="c_id" [(ngModel)]="c_id" /> </td>
                     </tr>
                     <tr>
                         <td style="width: 20%">
                             SALUTATION<span style="color:Red;">*</span>
                         </td>
                         <td style="width: 30%">
-                <select name="drp_salutaion" id="drp_salutaion">
+                <select required name="drp_salutaion" id="drp_salutaion">
           <option value="">--Select--</option>
           <option value="MR">MR</option>
           <option value="MRS">MRS</option>
@@ -101,9 +108,9 @@
                             FULL NAME<span style="color:Red;">*</span>
                         </td>
                         <td style="width: 30%">
-                            <input name="txtname" type="text" maxlength="50" id="txtname" [(ngModel)]="c_name" class="onlytext" (keyup)="validateStr(c_name)" />
+                            <input required name="txtname" type="text" maxlength="50" id="txtname" [(ngModel)]="c_name" class="onlytext" (keyup)="validateStr(c_name)" />
                             <span *ngIf="Flag==false ; ">
-                                    <h6 style="color:Red;">{{StrStatus}} </h6>
+                                    <h6 style="color:Red;">{{strStatus}} </h6>
                                     </span>
                         </td>
                     </tr>
@@ -111,12 +118,12 @@
                         <td style="width: 20%">
                             &nbsp;FATHER/HUSBAND NAME<span style="color:Red;">*</span></td>
                         <td style="width: 30%">
-                            <input name="txtfname" type="text" maxlength="50" id="txtfname" />
+                            <input required name="txtfname" type="text" maxlength="50" id="txtfname" />
                         </td>
                         <td style="width: 20%">
                             DATE OF BIRTH <span style="color:Red;">*</span></td>
                         <td style="width: 30%">
-                            <input name="txtdob" type="date" id="txtdob" class="datetime" />
+                            <input required name="txtdob" type="date" id="txtdob" class="datetime" />
                         </td>
                     </tr>
                     <tr>
@@ -126,7 +133,7 @@
                         <td style="width: 30%">
                             <table id="rdogender" border="0">
           <tr>
-            <td><input id="rdogender_0" type="radio" name="rdogender" value="M" checked="checked" />
+            <td><input required id="rdogender_0" type="radio" name="rdogender" value="M" checked="checked" />
             <label for="rdogender_0">MALE</label></td><td><input id="rdogender_1" type="radio" name="rdogender" value="F" />
             <label for="rdogender_1">FEMALE</label></td>
           </tr>
@@ -135,7 +142,7 @@
                         <td style="width: 20%">
                             ADDRESS LINE 1 <span style="color:Red;">*</span></td>
                         <td style="width: 30%">
-                            <input name="txt_corres_add1" type="text" maxlength="45" id="txt_corres_add1" />
+                            <input required name="txt_corres_add1" type="text" maxlength="45" id="txt_corres_add1" />
                         </td>
                     </tr>
                     <tr>
@@ -148,14 +155,14 @@
                         <td style="width: 20%">
                             CITY <span style="color:Red;">*</span></td>
                         <td style="width: 30%">
-                            <input name="txt_corres_city" type="text" maxlength="30" id="txt_corres_city" class="onlytext" onkeypress="return event.charCode>=48 && event.charCode<=57" />
+                            <input required name="txt_corres_city" type="text" maxlength="30" id="txt_corres_city" class="onlytext"  />
                         </td>
                     </tr>
                     <tr>
                         <td >
                             &nbsp;STATE <span style="color:Red;">*</span></td>
                         <td >
-                            <select name="drpstate" id="drpstate">
+                            <select required name="drpstate" id="drpstate">
           <option value="">--Select--</option>
           <option value="AP">ANDHRA PRADESH</option>
           <option value="AS">ASSAM</option>
@@ -191,17 +198,17 @@
                         <td >
                             PIN CODE <span style="color:Red;">*</span></td>
                         <td >
-                            <input name="txtpin" type="text" maxlength="6"onkeypress="return event.charCode>=48 && event.charCode<=57" id="txtpin" class="onlynumeric" />
+                            <input required name="txtpin" type="text" maxlength="6"onkeypress="return event.charCode>=48 && event.charCode<=57" id="txtpin" class="onlynumeric" />
                         </td>
                     </tr>
                     <tr>
                         <td >
                             MOBILE NUMBER <span style="color:Red;">*</span> </td>
                         <td >(+91)
-                            <input name="txtmobno" type="text" [(ngModel)]="mobileNo" (keyup)="MySubmit(mobileNo)" maxlength="10" id="txtmobno" class="onlynumeric" />
+                            <input required name="txtmobno" type="text" [(ngModel)]="mobileNo" (keyup)="MySubmit(mobileNo)" maxlength="10" id="txtmobno" class="onlynumeric" />
                                     
-                            <span *ngIf="Fa==false ; ">
-                                    <h6 style="color:Red;">{{MobileStatus}} </h6>
+                            <span *ngIf="Flag==false ; ">
+                                    <h6 style="color:Red;">{{mobileStatus}} </h6>
                                     </span>
                                     <!-- <ng-template #else1>
                                       <h6 style="color:Red;">{{mobileStatus}} </h6>
@@ -212,14 +219,14 @@
                             EMAIL ID<span style="color:Red;">*</span>
                         </td>
                         <td >
-                            <input name="txtemail" type="text" maxlength="50" id="txtemail" />
+                            <input required name="txtemail" type="text" maxlength="50" id="txtemail" />
                         </td>
                     </tr>
                      </table>
                      <table width="100%" align="center" border="1">
                         <tr>
                             <td style="text-align: center;" colspan="4">
-                                <input type="submit" name="btnsubmit" value="S U B M I T" id="btnsubmit" />
+                                <input type="submit" [disabled]="form.invalid" name="btnsubmit" (click)="Register()" value="S U B M I T" id="btnsubmit" />
                             </td>
                         </tr>
                     </table>
@@ -227,3 +234,8 @@
             </form>
             
             </body>    
+    
+            <div id="created" style="margin: 2.5% 10%; width: 80%; text-align: center; display:none;"  class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong> The Customer is Registered..! </strong> 
+                </div>

@@ -104,203 +104,211 @@
             </ul>
         </nav>
     </section>
-    <div style="background-color: lightgray">
-<br>
-  <div *ngIf="OnSelectPaymentType == false" id="to-center">
- <div class="py-5">
-   <div class="container">
-     <div class="row hidden-md-up">
-       <div class="col-md-4">
-         <div class="card">
-           <div class="card-block">
-         
-             <img src="../assets/img1.jpg" width=200px height=180px>
-             
-           </div>
-           <button id="to-center-btn" class="card-link" (click)="TransferType('IMPS')">Transfer</button>
-         </div>
-       </div>
-       <div class="col-md-4">
-         <div class="card">
-           <div class="card-block">
-           
-             <img src="../assets/img2.jpg" width=200px height=180px>
-           </div>
-           <button id="to-center-btn" class="card-link" (click)="TransferType('NEFT')">Transfer</button>
-         </div>
-       </div>
-       <div class="col-md-4">
-         <div class="card">
-           <div class="card-block">
-           
-             <img src="../assets/img3.jpg" width=200px height=180px>
-           </div>
-           <button id="to-center-btn" class="card-link" (click)="TransferType('RTGS')">Transfer</button>
-         </div>
-       </div>
-     </div><br><br><br>
-     <div class="row">
-       <div class="col-md-4">
-         <div class="card">
-           <div class="card-block">
-            
-             <img src="../assets/img4.jpg" width=200px height=180px>
-             
-           </div>
-           <button id="to-center-btn" class="card-link" (click)="TransferType('UPI')">Transfer</button>
-         </div>
-       </div>
-     </div>
+<div style="background-color: lightgray">
+    
+   <div class="to-left">
+     <br>
+     <div style="margin-right: 35px">
+       <tr *ngFor="let item of details">
+         <span> Hello <b>{{item.name}}</b></span><br>
+         <span>Account Number : <b>{{item.accnum}}</b></span><br>
+         <span>Your Balance Amount : <b>{{item.balance}}</b> </span>
+       </tr> 
    </div>
- </div>
-</div>
-  <div *ngIf="Imps == true" id="to-center">
-      <div id="type">
-          <h5>{{PaymentType}}</h5>
-        </div>
-    
-    
-    <div class="form-group">
-      <br>
-      <label class="accountnum">Your Account Number : {{SendersAccountNumber}}</label> <br>
-      <label >Beneficiary Account Number:</label>
-        <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
-      </div>
-      <div class="form-group">
-          <label >Confirm Account number:</label>
-          <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required/>
-        </div>
-        <div class="form-group">
-            <label >IFSC Code:</label>
-            <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required/>
-          </div>
-      <div class="form-group">
-        <label >Amount:</label>
-        <input type="text" value="" class="form-control" [(ngModel)]="money" required />
-      </div>
-      <div class="form-group">
-        <label >Purpose:</label>
-        <input type="text" value="" class="form-control" [(ngModel)]="purpose" />
-      </div>
-      <button type="submit" class="btn btn-primary"  (click)="TransferMoneyImps(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
-      <br><br>
-
-      <div id="to-center">
-          <span id="message">
-              {{Message}} <br>
-           </span>
-      </div>
   </div>
-
-<div *ngIf="Rtgs == true" id="to-center">
-    <div id="type">
-        <h5>{{PaymentType}}</h5>
-      </div>
-  
-  
-      <div class="form-group">
-          <br>
-          <label class="accountnum">Your Account Number : {{SendersAccountNumber}}</label> <br>
-          <label >Beneficiary Account Number:</label>
-            <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
-          </div>
-          <div class="form-group">
-              <label >Confirm Account number:</label>
-              <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required />
-            </div>
-            <div class="form-group">
-                <label >IFSC Code:</label>
-                <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required />
+     <br>
+     <div *ngIf="OnSelectPaymentType == false" id="to-center">
+    <div class="py-5">
+      <div class="container">
+        <div class="row hidden-md-up">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">IMPS</h4>
+                <img src="../assets/img1.jpg" width=200px height=180px>
+                
               </div>
-          <div class="form-group">
-            <label >Amount:</label>
-            <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
-          </div>
-          <div class="form-group">
-            <label >Purpose:</label>
-            <input type="text" value="" class="form-control" [(ngModel)]="purpose" />
-          </div>
-          <button type="submit" class="btn btn-primary"  (click)="TransferMoneyRtgs(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
-          <br><br>
-    
-
-    <div id="to-center">
-        <span id="message">
-            {{Message}} <br>
-         </span>
-    </div>
-
-</div>
-
-<div *ngIf="Neft == true" id="to-center">
-  <div id="type">
-      <h5>{{PaymentType}}</h5>
-    </div>
-
-
-    <div class="form-group">
-        <br>
-        <label class="accountnum">Your Account Number : {{SendersAccountNumber}}</label> <br>
-        <label >Beneficiary Account Number:</label>
-          <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required/>
-        </div>
-        <div class="form-group">
-            <label >Confirm Account number:</label>
-            <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required/>
-          </div>
-          <div class="form-group">
-              <label >IFSC Code:</label>
-              <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required/>
+              <button id="to-center-btn" class="card-link" (click)="TransferType('IMPS')">Transfer</button>
             </div>
-        <div class="form-group">
-          <label >Amount:</label>
-          <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">NEFT</h4>
+                <img src="../assets/img2.jpg" width=200px height=180px>
+                
+              </div>
+              <button id="to-center-btn" class="card-link" (click)="TransferType('NEFT')">Transfer</button>
+            </div>
+          </div>
+          <br><br>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">RTGS</h4>
+                <img src="../assets/img3.jpg" width=200px height=180px>
+                
+              </div>
+              <button id="to-center-btn" class="card-link" (click)="TransferType('RTGS')">Transfer</button>
+            </div>
+          </div>
+        </div><br><br><br>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-block">
+                <h4 class="card-title">UPI</h4>
+                <img src="../assets/img4.jpg" width=200px height=180px>
+                
+              </div>
+              <button id="to-center-btn" class="card-link" (click)="TransferType('UPI')">Transfer</button>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label >Purpose:</label>
-          <input type="text" value="" class="form-control" [(ngModel)]="purpose" />
-        </div>
-        <button type="submit" class="btn btn-primary"  (click)="TransferMoneyNeft(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
-        <br><br>
-  
-
-  <div id="to-center">
-      <span id="message">
-          {{Message}} <br>
-       </span>
-  </div>
-
-</div>
-
-
-<div *ngIf="Upi == true" id="to-center">
-  <div id="type">
-      <h5>{{PaymentType}}</h5>
+      </div>
     </div>
-
-
-<div class="form-group">
-    <label >UPI ID:</label>
-    <input type="text" value="" class="form-control" [(ngModel)]="upiId" required/>
-  </div>
-  <div class="form-group">
-    <label >Amount:</label>
-    <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
-  </div>
-  <button type="submit" class="btn btn-primary"  (click)="TransferMoneyUpi(upiId,money)">Transfer</button>
-  <br><br>
-
-  <div id="to-center">
-      <span id="message">
-          {{Message}} <br>
+   </div>
+     <div *ngIf="Imps == true" id="to-center">
+         <div id="type">
+             <h5>{{PaymentType}}</h5>
+           </div>
+       
+       
+       <div class="form-group">
+         <br>
+          <br>
+         <label >Beneficiary Account Number:</label>
+           <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
+         </div>
+         <div class="form-group">
+             <label >Confirm Account number:</label>
+             <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required/>
+           </div>
+           <div class="form-group">
+               <label >IFSC Code:</label>
+               <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required/>
+             </div>
+         <div class="form-group">
+           <label >Amount:</label>
+           <input type="text" value="" class="form-control" [(ngModel)]="money" required />
+         </div>
+         <div class="form-group">
+           <label >Purpose:</label>
+           <input type="text" value="" class="form-control" [(ngModel)]="purpose" />
+         </div>
+         <button type="submit" class="btn btn-primary"  (click)="TransferMoneyImps(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
+         <br><br>
+   
+         
+                <b> {{Message}} </b><br>
+   
+     </div>
+   
+   <div *ngIf="Rtgs == true" id="to-center">
+       <div id="type">
+           <h5>{{PaymentType}}</h5>
+         </div>
+     
+     
+         <div class="form-group">
+             <br><br>
+             <label >Beneficiary Account Number:</label>
+               <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required />
+             </div>
+             <div class="form-group">
+                 <label >Confirm Account number:</label>
+                 <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required />
+               </div>
+               <div class="form-group">
+                   <label >IFSC Code:</label>
+                   <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required />
+                 </div>
+             <div class="form-group">
+               <label >Amount:</label>
+               <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+             </div>
+             <div class="form-group">
+               <label >Purpose:</label>
+               <input type="text" value="" class="form-control" [(ngModel)]="purpose" />
+             </div>
+             <button type="submit" class="btn btn-primary"  (click)="TransferMoneyRtgs(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
+             <br><br>
+       
+   
+       <!-- <div id="to-center"> -->
+           <!-- <span id="message"> -->
+             <b> {{Message}} </b> <br>
+            <!-- </span> -->
+       <!-- </div> -->
+   
+   </div>
+   
+   <div *ngIf="Neft == true" id="to-center">
+     <div id="type">
+         <h5>{{PaymentType}}</h5>
+       </div>
+   
+   
+       <div class="form-group">
+           <br>
+    <br>
+           <label >Beneficiary Account Number:</label>
+             <input type="text" value="" class="form-control" [(ngModel)]="accountNumber" required/>
+           </div>
+           <div class="form-group">
+               <label >Confirm Account number:</label>
+               <input type="text" value="" class="form-control" [(ngModel)]="confirmAccountNumber" required/>
+             </div>
+             <div class="form-group">
+                 <label >IFSC Code:</label>
+                 <input type="text" value="" class="form-control" [(ngModel)]="ifsc" required/>
+               </div>
+           <div class="form-group">
+             <label >Amount:</label>
+             <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+           </div>
+           <div class="form-group">
+             <label >Purpose:</label>
+             <input type="text" value="" class="form-control" [(ngModel)]="purpose" />
+           </div>
+           <button type="submit" class="btn btn-primary"  (click)="TransferMoneyNeft(accountNumber,confirmAccountNumber,ifsc,money,purpose)">Transfer</button>
+           <br><br>
+     
+   
+     
+           <b> {{Message}} </b> <br>
+       
+   
+   </div>
+   
+   
+   <div *ngIf="Upi == true" id="to-center">
+     <div id="type">
+         <h5>{{PaymentType}}</h5>
+       </div>
+   
+   
+   <div class="form-group">
+       <label >UPI ID:</label>
+       <input type="text" value="" class="form-control" [(ngModel)]="upiId" required/>
+     </div>
+     <div class="form-group">
+       <label >Amount:</label>
+       <input type="text" value="" class="form-control" [(ngModel)]="money" required/>
+     </div>
+     <button type="submit" class="btn btn-primary"  (click)="TransferMoneyUpi(upiId,money)">Transfer</button>
+     <br><br>
+   
+     
+           <b> {{Message}} </b> <br>
+       
+   
+   </div>
+   
+   
+     <div *ngIf="OnTransfer == true" id="to-center">
+       <span id="message">
+           Your available balance : <b> {{SendersBalance}} </b>
        </span>
-  </div>
-
-</div>
-
-
-  <div *ngIf="OnTransfer == true" id="to-center">
-    <span id="message">
-        Your available balance : {{SendersBalance}}
-    </span>
-  </div></div>
+     </div>
+    </div>

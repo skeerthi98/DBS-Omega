@@ -1,0 +1,128 @@
+<header>
+    <marquee class="rounded" behavior="scroll" direction="left">
+            <b>Welcome to DBS Internet Banking</b>
+         </marquee>
+<nav class="navbar navbar-expand-md navbar-dark">
+    <a class="navbar-brand" href="#">
+        <img src="../../assets/logo.png" title="DBS" height="85px" width="250px">
+    </a> 
+    <a href="profile" style="float: right;margin-left: 850px;color: white">Welcome Manoj K
+    </a>
+</nav>
+</header>
+<section>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <ul class="navbar-nav mr-auto">
+                <ul class="nav-item">
+                        <a class="nav-link" name="main" href="adminhome" style="color: white">Home</a>
+                </ul>
+            <ul class="nav-item dropdown ml-auto">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <span>Accounts</span>
+                </a>
+                <div class="dropdown-menu">
+                        <div class="dropdown-submenu">
+                                <a class="dropdown-item">Customer Services<span class="caret"></span></a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="accountopeninghome"> Open an Account</a>
+                                  <a class="dropdown-item"> Delete an Account </a>
+                                </div>
+                        </div>
+                </div>
+            </ul>
+            <ul class="nav-item dropdown ml-auto">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <span>Personal Security Settings</span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-submenu">
+                            <a class="dropdown-item">Password Management<span class="caret"></span></a>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item"> Enable Transaction Password </a>
+                              <a class="dropdown-item"> Disable Transaction Password </a>
+                              <a class="dropdown-item"> Generate New Transaction Password  </a>
+                              <a class="dropdown-item"> Change Login/Transaction Password & User ID </a>
+                            </div>
+                    </div>
+                </div>
+            </ul>
+            <ul class="nav-item dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <span>Profiling</span>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="customerregister">Register a Customer</a>
+                        <a class="dropdown-item" href="customermodify">Modify Customer Details</a>
+                        <a class="dropdown-item" href="customerdelete">Delete a Customer</a>
+                    </div>
+                </ul>        
+        </ul>
+    </nav>
+</section>
+
+<body>
+    <form ngNativeValidate ngForm #form="ngForm"  style="margin-top: -50px" enctype="multipart/form-data">    
+        <div>
+            <table width="100%" align="center" border="1">
+                <tr>
+                    <td style="text-align: center; font-size: 30px;color:white; background-color: maroon;" colspan="4">
+                        Customer Deletion
+                    </td>
+                </tr>        
+                <tr>
+                    <td style="width: 20%">
+                        CUSTOMER ID<span style="color:Red;">*</span>
+                    </td>
+                    <td style="width: 30%">
+                        <input required name="txtname" style="margin-left: 2.6rem;" type="text" maxlength="50" id="txtname" [(ngModel)]="c_id" />
+                    </td>
+                </tr>
+            </table>
+                
+            <table width="100%" align="center" border="1">
+                <tr>
+                    <td  style="text-align: center;" colspan="3"> 
+                        <!-- <input type="submit" name="btnsubmit" (click)="GetUser(CustomerId)" value="DELETE" id="btnsubmit" /> -->
+                        <button type="submit" [disabled]="form.invalid" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                            Delete
+                        </button>    
+                    </td>
+                </tr>
+            </table>
+
+            <div class="container">
+                    <div class="modal" id="myModal">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                        
+                          <div class="modal-header">
+                            <h4 class="modal-title">Delete Customer</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          </div>
+                          <div class="modal-body">
+                            Are you sure you want to delete?
+                          </div>
+                          
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" (click)="DeleteCustomer()" data-dismiss="modal">Delete</button>
+                            <button type="button" class="btn btn" data-dismiss="modal">Cancel</button>
+
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>
+
+        </div>
+    </form>   
+</body>    
+    <div id="deleted" style="margin: 5% 10%; width: 80%; text-align: center; display:none;"  class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong> The Customer is deleted..! </strong> 
+        </div>
+    
+
+        
+        
